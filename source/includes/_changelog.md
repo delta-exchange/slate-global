@@ -2,7 +2,7 @@
 
 ## 18.10.2024
 1. Added clickable links to the corresponding API response json schemas under some API "Responses" table. Updated some schemas to match the response. (This is a documentation fix, no changes in API)
-2. Added "Testnet-India" REST and Websocket host endpoints.
+2. Added "Testnet" REST and Websocket host endpoints.
 3. Changed "Rate Limits" description and added an example.
 
 
@@ -20,7 +20,7 @@ Our v2 Api is significantly faster than the v1 api. Our focus while rebuilding v
 
 > New Response Format
 
-```
+```json
 // The new format supports sending meta data alongside response body. 
 // Success format
 {

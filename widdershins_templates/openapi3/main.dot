@@ -3,8 +3,8 @@ This section documents the latest(v2) api for trading on Delta Exchange. The RES
 
 REST API Endpoint URL for [Delta Exchange Global](https://global.delta.exchange/)
 
-- **Production-Global** - https://api.delta.exchange
-- **Testnet-Global** - https://testnet-api.delta.exchange
+- **Production** - https://api.delta.exchange
+- **Testnet(Demo Account)** - https://testnet-api.delta.exchange
 
 {{ for (var r in data.resources) { }}
 {{ data.resource = data.resources[r]; }}

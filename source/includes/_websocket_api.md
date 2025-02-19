@@ -9,8 +9,8 @@ Websocket api can be used for the following use cases
 
 Access url for [Delta Exchange Global](https://global.delta.exchange)
 
-- **Production-Global** - wss://socket.delta.exchange
-- **Testnet-Global** - wss://testnet-socket.delta.exchange
+- **Production** - wss://socket.delta.exchange
+- **Testnet(Demo Account)** - wss://testnet-socket.delta.exchange
 
 
  You will be disconnected, if there is no activity within 60 seconds after making connection.
@@ -27,7 +27,7 @@ Once a subscribe message is received the server will respond with a subscription
 
 > Subscription Sample
 
-```
+```json
 // Request
 // Subscribe to BTCUSD_28Dec and ETHBTC_28Dec with the ticker and orderbookL2 channels,
 {
@@ -35,16 +35,16 @@ Once a subscribe message is received the server will respond with a subscription
     "payload": {
         "channels": [
             {
-                "name": "ticker",
+                "name": "v2/ticker",
                 "symbols": [
-                    "BTCUSD_28Dec",
-                    "ETHBTC_28Dec"
+                    "BTCUSDT",
+                    "ETHUSDT"
                 ]
             },
             {
                 "name": "l2_orderbook",
                 "symbols": [
-                    "BTCUSD_28Dec"
+                    "BTCUSDT"
                 ]
             },
             {
@@ -64,14 +64,14 @@ Once a subscribe message is received the server will respond with a subscription
         {
             "name": "l2_orderbook",
             "symbols": [
-                "BTCUSD_28Dec"
+                "BTCUSDT"
             ],
         },
         {
-            "name": "ticker",
+            "name": "v2/ticker",
             "symbols": [
-                "BTCUSD_28Dec",
-                "ETHBTC_28Dec"
+                "BTCUSDT",
+                "ETHUSDT"
             ]
         },
         {
@@ -90,7 +90,7 @@ Once a subscribe message is received the server will respond with a subscription
         {
             "name": "l2_orderbook",
             "symbols": [
-                "BTCUSD_28Dec"
+                "BTCUSDT"
             ],
         },
         {
@@ -108,16 +108,16 @@ If you want to unsubscribe from channel/contracts pairs, send an "unsubscribe" m
 
 > Unsubscribe Sample
 
-```
+```json
 // Request
 {
     "type": "unsubscribe",
     "payload": {
         "channels": [
             {
-                "name": "ticker",          // unsubscribe from ticker channel only for BTCUSD_28Dec
+                "name": "v2/ticker",          // unsubscribe from ticker channel only for BTCUSD_28Dec
                 "symbols": [
-                    "BTCUSD_28Dec"
+                    "BTCUSDT"
                 ]
             },
             {
@@ -202,7 +202,7 @@ The client can enable heartbeat on the socket. If heartbeat is enabled, the serv
 - When you receive a new heartbeat message, you reset the timer
 - If the timer is called, that means the client didn't receive any heartbeat in last 35 seconds. In this case, the client should exit the existing connection and try to reconnect. 
 
-```
+```python
 // Enable Heartbeat on successful connection
 ws.send({
     "type": "enable_heartbeat"
@@ -223,7 +223,7 @@ ws.send({
 ## Ping/Pong
 The client can periodically (~ every 30 seconds) send a ping frame or a raw ping message and the server will respond back with a pong frame or a raw pong response. If the client doesn't receive a pong response in next 5 seconds, the client should exit the existing connection and try to reconnect. 
 
-```
+```python
 // Ping Request
 ws.send({
     "type": "ping"
@@ -343,7 +343,7 @@ Max interval (in case of same data): 5 secs
 
 > L1 Orderbook Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -360,7 +360,7 @@ Max interval (in case of same data): 5 secs
 }
 ```
 
-```
+```json
 // l1 orderbook Response
 {
   "ask_qty":"839",
@@ -386,7 +386,7 @@ Max interval (in case of same data): 5 secs
 
 > l1ob subscribe Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -404,7 +404,7 @@ Max interval (in case of same data): 5 secs
 }
 ```
 
-```
+```json
 // l1ob sample Response
 {
   "type":"l1ob",
@@ -427,7 +427,7 @@ Max interval (in case of same data): 5 secs
 
 > l1ob_c subscribe Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -436,8 +436,8 @@ Max interval (in case of same data): 5 secs
             {
                 "name": "l1ob_c",
                 "symbols": [
-                    "BTC_260124",
-                    "BTC_270124"
+                    "BTCUSDT",
+                    "ETHUSDT"
                 ]
             }
         ]
@@ -445,11 +445,11 @@ Max interval (in case of same data): 5 secs
 }
 ```
 
-```
+```json
 // l1ob_c Response
 {
   "type":"l1ob_c",
-  "s":"BTC_011223",  //Asset_Expiry
+  "s":"BTCUSDT",  //Asset_Expiry
   "c": "G6gA+B0HzjnKz3E2icneQi2yFbPX1mbq5Ok9j49QZ6iGuNDWLDpdfWEDjinwATeecMOF7GTgAjJOddfahjsUbHpW6fEp4spZhjoMQTFpZEo2fjnjvWcEAQyUk2E32VVd3ssdudqRE61qupUB",  
   //Brotli decompress this to get the below json.
   "t": 1701157556471116  //message publish time
@@ -480,7 +480,7 @@ Max interval (in case of same data): 10 secs
 
 > L2 Orderbook Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -497,10 +497,10 @@ Max interval (in case of same data): 10 secs
 }
 ```
 
-```
+```json
 // l2 orderbook Response
 {
-  "type":"l2_orderbook"
+  "type":"l2_orderbook",
   "symbol":"ETHUSDT",
   "product_id": 176,
   "buy": [
@@ -509,7 +509,6 @@ Max interval (in case of same data): 10 secs
         "size":10,              // For Futures & Options: number of contracts integer. Spot product: Asset token quantity in string.
         "depth":"10"            // total size from best bid
     },
-    ...
   ],
   "sell": [
     {
@@ -517,7 +516,6 @@ Max interval (in case of same data): 10 secs
         "size":20,
         "depth":"20"            // total size from best ask
     },
-    ...
   ],
   "last_sequence_no": 6435634,
   "last_updated_at": 1671600133884000,
@@ -532,7 +530,7 @@ Please note that if you subscribe to l2_updates channel without specifying the s
 Publish interval: 100 millisecs  
 "action"="update" messages wont be published till there is an orderbook change.
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -622,7 +620,7 @@ Please note that if you subscribe to all_trades channel without specifying the s
 
 > All Trades Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -639,7 +637,7 @@ Please note that if you subscribe to all_trades channel without specifying the s
 }
 ```
 
-```
+```json
 // All Trades Response Snapshot
 {
     "symbol": "BTCUSDT",
@@ -657,7 +655,7 @@ Please note that if you subscribe to all_trades channel without specifying the s
 }
 ```
 
-```
+```json
 // All Trades Response
 {
     symbol: "BTCUSDT",
@@ -685,7 +683,7 @@ Publish interval: 2 secs.
 
 > Mark Price Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -702,7 +700,7 @@ Publish interval: 2 secs.
 }
 ```
 
-```
+```json
 // Mark Price Response
 {
     "ask_iv":null,
@@ -731,7 +729,7 @@ Publish interval: 2 secs.
 
 > Spot Price Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -748,7 +746,7 @@ Publish interval: 2 secs.
 }
 ```
 
-```
+```json
 // Spot Price Response
 {
     symbol: ".DEBNBBTC",
@@ -764,7 +762,7 @@ Publish interval: 1 sec
 
 > v2/spot_price Subscribe
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -781,7 +779,7 @@ Publish interval: 1 sec
 }
 ```
 
-```
+```json
 // Response
 {
     s: ".DEETHUSDT",   # spot index symbol
@@ -797,7 +795,7 @@ This is the price used for settlement of options. Specifying symbols when subscr
 
 > Spot Price 30mtwap Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -814,7 +812,7 @@ This is the price used for settlement of options. Specifying symbols when subscr
 }
 ```
 
-```
+```json
 // Spot 30 minutes twap Price Response
 {
     symbol: ".DEXBTUSDT",
@@ -834,7 +832,7 @@ Please note that if you subscribe to funding rate channel without specifying the
 
 > Funding Rate Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -851,7 +849,7 @@ Please note that if you subscribe to funding rate channel without specifying the
 }
 ```
 
-```
+```json
 // Funding Rate Response
 {
     symbol: "BTCUSDT",
@@ -870,7 +868,7 @@ This channel provides updates when markets are disrupted and resumed. On opening
 
 >  Product Updates Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -884,7 +882,7 @@ This channel provides updates when markets are disrupted and resumed. On opening
 }
 ```
 
-```
+```json
 // Market Disruption Response
 {
     "type":"product_updates",
@@ -940,7 +938,7 @@ This channel provides updates on system wide announcements like scheduled mainte
 > Announcements Sample
 
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -954,7 +952,7 @@ This channel provides updates on system wide announcements like scheduled mainte
 }
 ```
 
-```
+```json
 // Maintenance Started Response
 {
     "type":"announcements",
@@ -985,7 +983,7 @@ Please note that if you subscribe to candlsticks channel without specifying the 
 
 >OHLC candles update sample
 
-```
+```json
 Sample Subscribe Request
 {
   "name": "candlestick_1m",                 // "candlestick_" + resolution
@@ -1019,7 +1017,7 @@ This channel provides updates on wallet balances. Updates are sent for a specifi
 
 > Margins Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -1032,7 +1030,7 @@ This channel provides updates on wallet balances. Updates are sent for a specifi
     }
 }
 ```
-```
+```json
 // margin update
 {
     "action": "update",
@@ -1076,7 +1074,7 @@ Please note that if you subscribe to positions channel without specifying the sy
 
 > Positions Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -1104,7 +1102,7 @@ Please note that if you subscribe to positions channel without specifying the sy
 }
 ```
 
-```
+```json
 // Position update
 {
     "type": "positions",
@@ -1172,7 +1170,7 @@ Please note that if you subscribe to orders channel without specifying the symbo
 
 > Orders Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -1186,7 +1184,7 @@ Please note that if you subscribe to orders channel without specifying the symbo
     }
 }
 ```
-```
+```json
 // Order update
 
 {
@@ -1195,25 +1193,25 @@ Please note that if you subscribe to orders channel without specifying the symbo
     "reason": "",                       // "fill"/"stop_update"/"stop_trigger"/"stop_cancel"/"liquidation"/"self_trade"/null
     "symbol": "BTCUSDT",           // Product Symbol
     "product_id": 139,                    // Product ID
-    "order_id": 1234                    // Order id
-    "client_order_id": ""               // Client order id
+    "order_id": 1234 ,                   // Order id
+    "client_order_id": "",              // Client order id
     "size": 100,                        // Order size
     "unfilled_size": 55,                // Unfilled size
-    "average_fill_price": "8999.00"     // nil for unfilled orders
-    "limit_price": "9000.00"                  // Price of the order
-    "side": "buy"                       // Order side (buy or sell)
-    "cancellation_reason": "cancelled_by_user"        // Cancellation reason in case of cancelled order, null otherwise
+    "average_fill_price": "8999.00",     // nil for unfilled orders
+    "limit_price": "9000.00",                  // Price of the order
+    "side": "buy",                       // Order side (buy or sell)
+    "cancellation_reason": "cancelled_by_user",        // Cancellation reason in case of cancelled order, null otherwise
     "stop_order_type": "stop_loss_order",             // If a Stop Order -> "stop_loss_order"/"take_profit_order", null otherwise
-    "bracket_order": false              // true for a bracket_order, false otherwise
-    "state": "open"                     // "open"/"pending"/"closed"/"cancelled"
-    "seq_no": 1                         // Incremental sequence number
-    "timestamp": 1594105083998848       // Unix timestamp in microseconds
-    "stop_price": "9010.00"                             // stop_price of stop order        
-    "trigger_price_max_or_min": "9020.00"               // for trailing stop orders
-    "bracket_stop_loss_price": "8090.00"
-    "bracket_stop_loss_limit_price": "8090.00"
-    "bracket_take_profit_price": "9020"      
-    "bracket_take_profit_limit_price": "9020"
+    "bracket_order": false,             // true for a bracket_order, false otherwise
+    "state": "open",                    // "open"/"pending"/"closed"/"cancelled"
+    "seq_no": 1,                       // Incremental sequence number
+    "timestamp": 1594105083998848,       // Unix timestamp in microseconds
+    "stop_price": "9010.00",                             // stop_price of stop order        
+    "trigger_price_max_or_min": "9020.00",               // for trailing stop orders
+    "bracket_stop_loss_price": "8090.00",
+    "bracket_stop_loss_limit_price": "8090.00",
+    "bracket_take_profit_price": "9020",      
+    "bracket_take_profit_limit_price": "9020",
     "bracket_trail_amount": "10.00"
 }
 
@@ -1264,7 +1262,7 @@ Please note that if you subscribe to user trades channel without specifying the 
 
 > User Trades Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -1278,7 +1276,7 @@ Please note that if you subscribe to user trades channel without specifying the 
     }
 }
 ```
-```
+```json
 // user_trades
 {
     "symbol": "BNBBTC_30Nov",
@@ -1312,7 +1310,7 @@ Please note that if you subscribe to v2/user_trades channel without specifying t
 
 > v2/user_trades Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -1326,7 +1324,7 @@ Please note that if you subscribe to v2/user_trades channel without specifying t
     }
 }
 ```
-```
+```json
 // v2/user_trades
 {
     "type": "v2/user_trades",
@@ -1356,7 +1354,7 @@ UCF: is unrealised cashflows of your portfolio. These are the cashflows (negativ
 
 > Portfolio Margin Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",
@@ -1370,7 +1368,7 @@ UCF: is unrealised cashflows of your portfolio. These are the cashflows (negativ
     }
 }
 ```
-```
+```json
 // portfolio margin update
 
 {
@@ -1378,7 +1376,7 @@ UCF: is unrealised cashflows of your portfolio. These are the cashflows (negativ
     "user_id": 1,
     "asset_id": 2,                   // BTC
     "index_symbol": ".DEXBTUSDT",
-    liquidation_risk: false,
+    "liquidation_risk": false,
     "blocked_margin": "100", // Margin blocked for current portfolio. Same as portfolio_margin in margins channel.
     "mm_wo_ucf": "80",
     "mm_w_ucf": "80",
@@ -1446,7 +1444,7 @@ Channel provides updates when MMP is triggered. Market maker protection is avail
 
 > MMP Trigger Sample
 
-```
+```json
 //Subscribe
 {
     "type": "subscribe",

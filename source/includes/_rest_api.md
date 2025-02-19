@@ -21,8 +21,8 @@ This section documents the latest(v2) api for trading on Delta Exchange. The RES
 
 REST API Endpoint URL for [Delta Exchange Global](https://global.delta.exchange/)
 
-- **Production-Global** - https://api.delta.exchange
-- **Testnet-Global** - https://testnet-api.delta.exchange
+- **Production** - https://api.delta.exchange
+- **Testnet(Demo Account)** - https://testnet-api.delta.exchange
 
 <h1 id="delta-exchange-api-v2-assets">Assets</h1>
 
@@ -5985,9 +5985,9 @@ This operation does not require authentication.
 |product_id|integer|true|none|Only one of either product_id or product_symbol must be sent.|
 |product_symbol|string|true|none|Only one of either product_id or product_symbol must be sent.|
 |limit_price|string|false|none|Price level for limit orders|
-|size|integer|false|none|Order size|
-|side|string|false|none|Buy order or Sell order|
-|order_type|string|false|none|Limit order(limit_price must be defined) or Market order|
+|size|integer|true|none|Order size|
+|side|string|true|none|Buy order or Sell order|
+|order_type|string|true|none|Limit order(limit_price must be defined) or Market order|
 |stop_order_type|string|false|none|Stop order type - stop loss or take profit|
 |stop_price|string|false|none|Stop loss price level if the order is stop order|
 |trail_amount|string|false|none|Use trail amount if you want a trailing stop order. Required if stop price is empty.|

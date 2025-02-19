@@ -13,8 +13,10 @@ e.g
 
 product_id| symbol |product_type| description
 --|--|--|--
-139|BTCUSDT|inverse_future|Bitcoin Perpetual futures, quoted in US Dollar and settled & margined in BTC
-46|BTCUSDT_27Dec|inverse_future|27th December Bitcoin future quoted in US Dollar
+139|BTCUSDT|perpetual_future|Bitcoin Perpetual futures, quoted in US Dollar and settled & margined in BTC
+176|ETHUSDT|perpetual_future|Ethereum Perpetual futures, quoted in US Dollar and settled & margined in BTC
+231575|C-BTC-95600-190225|call_option|BTC call option strike price $95600 and expiring on 19/02/2024
+231572|P-BTC-95600-190225|put_option|BTC put option strike price $95600 and expiring on 19/02/2024
 
 
 ## Symbology
@@ -23,7 +25,7 @@ product_id| symbol |product_type| description
 
     Underlying Asset| Quoting Asset|Q (optional; applicable only to quanto contracts)|_|Matruity Date (optional, applicable only for futures contracts)
     
-    e.g. BTCUSDT, BTCUSDT_27Dec, LEOUSDQ
+    e.g. BTCUSDT, ETHUSDT, LEOUSDQ
   
 **Mark Price:** Each contract has a unique [Mark Price](https://global.delta.exchange/user-guide/)  which can be referred to by: **MARK: Contract_Symbol (MARK:BTCUSDT)** 
 
@@ -42,11 +44,11 @@ Pagination can be called in following APIs
 
 API|End point|
 --|--
-Products|/products
-Orders|/orders
-Orders History|/orders/history
-Fills|/fills
-Wallet transactions|/wallet/transactions
+Products|/v2/products
+Orders|/v2/orders
+Orders History|/v2/orders/history
+Fills|/v2/fills
+Wallet transactions|/v2/wallet/transactions
 
 **Pagination parameters**
 
@@ -59,13 +61,13 @@ Wallet transactions|/wallet/transactions
 
 In API response, meta data will contain the cursors as show below
 
-```
+```json
 {
-  success: true,
-  result: [ {}, {}, .....],
-  meta: {
-    after: "an_arbitary_string",
-    before: "another_arbitary_string"
+  "success": true,
+  "result": [],
+  "meta": {
+    "after": "an_arbitary_string",
+    "before": "another_arbitary_string"
   }
 }
 ```
