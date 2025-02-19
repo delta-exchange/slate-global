@@ -808,19 +808,11 @@
               </ul>
           </li>
           <li>
-            <a href="#web-socket-rpc" class="toc-h1 toc-link" data-title="Web Socket RPC">Web Socket RPC</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#request-message" class="toc-h2 toc-link" data-title="Request Message">Request Message</a>
-                  </li>
-                  <li>
-                    <a href="#response-message" class="toc-h2 toc-link" data-title="Response Message">Response Message</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#changelog" class="toc-h1 toc-link" data-title="Changelog">Changelog</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#20-02-25" class="toc-h2 toc-link" data-title="20.02.25">20.02.25</a>
+                  </li>
                   <li>
                     <a href="#18-10-2024" class="toc-h2 toc-link" data-title="18.10.2024">18.10.2024</a>
                   </li>
@@ -1128,7 +1120,7 @@ You should use ntp timestamp to sync local clocks in order to avoid following is
   <span class="s">'api-key'</span><span class="p">:</span> <span class="n">api_key</span><span class="p">,</span>
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="n">timestamp</span><span class="p">,</span>
   <span class="s">'signature'</span><span class="p">:</span> <span class="n">signature</span><span class="p">,</span>
-  <span class="s">'User-Agent'</span><span class="p">:</span> <span class="s">'rest-client'</span><span class="p">,</span>
+  <span class="s">'User-Agent'</span><span class="p">:</span> <span class="s">'python-rest-client'</span><span class="p">,</span>
   <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 <span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s">"product_id"</span><span class="p">:</span> <span class="mi">139</span><span class="p">,</span> <span class="s">"state"</span><span class="p">:</span> <span class="s">'open'</span><span class="p">}</span>
@@ -1150,7 +1142,7 @@ You should use ntp timestamp to sync local clocks in order to avoid following is
   <span class="s">'api-key'</span><span class="p">:</span> <span class="n">api_key</span><span class="p">,</span>
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="n">timestamp</span><span class="p">,</span>
   <span class="s">'signature'</span><span class="p">:</span> <span class="n">signature</span><span class="p">,</span>
-  <span class="s">'User-Agent'</span><span class="p">:</span> <span class="s">'rest-client'</span><span class="p">,</span>
+  <span class="s">'User-Agent'</span><span class="p">:</span> <span class="s">'python-rest-client'</span><span class="p">,</span>
   <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
@@ -15448,18 +15440,18 @@ Please note that if you subscribe to all_trades channel without specifying the s
             </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25816.5"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686577411879974</span><span class="w">   </span><span class="err">//</span><span class="w"> </span><span class="err">time</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">trade.</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="err">...</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">More</span><span class="w"> </span><span class="err">recent</span><span class="w"> </span><span class="err">trades.</span><span class="w">
+         </span><span class="err">//</span><span class="w"> </span><span class="err">More</span><span class="w"> </span><span class="err">recent</span><span class="w"> </span><span class="err">trades.</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">All</span><span class="w"> </span><span class="err">Trades</span><span class="w"> </span><span class="err">Response</span><span class="w">
 </span><span class="p">{</span><span class="w">
-    </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
-    </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="s2">"25816.5"</span><span class="p">,</span><span class="w">
-    </span><span class="err">size</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-    </span><span class="err">type</span><span class="p">:</span><span class="w"> </span><span class="s2">"all_trades"</span><span class="p">,</span><span class="w">
-    </span><span class="err">buyer_role</span><span class="p">:</span><span class="w"> </span><span class="s2">"maker"</span><span class="p">,</span><span class="w">
-    </span><span class="err">seller_role</span><span class="p">:</span><span class="w"> </span><span class="s2">"taker"</span><span class="p">,</span><span class="w">
-    </span><span class="err">timestamp</span><span class="p">:</span><span class="w"> </span><span class="mi">1686577411879974</span><span class="w">
+    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25816.5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all_trades"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"buyer_role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"maker"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seller_role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"taker"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686577411879974</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='mark_price'>mark_price</h2>
 <p><strong>mark_price</strong> channel provides mark price updates at a fixed interval. This is the price on which all open positions are marked for liquidation.Please note that the product symbol is prepended with a &quot;MARK:&quot; to subscribe for mark price.<br>
@@ -15529,9 +15521,9 @@ Publish interval: 2 secs.</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Spot</span><span class="w"> </span><span class="err">Price</span><span class="w"> </span><span class="err">Response</span><span class="w">
 </span><span class="p">{</span><span class="w">
-    </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">".DEBNBBTC"</span><span class="p">,</span><span class="w">
-    </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0014579"</span><span class="p">,</span><span class="w">
-    </span><span class="err">type</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot_price"</span><span class="w">
+    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">".DEBNBBTC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0014579"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot_price"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='v2-spot_price'>v2/spot_price</h2>
 <p><strong>v2/spot_price</strong> channel publishes data of underlying index prices at a fixed interval. Specifying symbols when subscribing to v2/spot_price is necessary to receive updates. No updates are sent for symbol: <strong><em>&quot;all&quot;</em></strong><br>
@@ -15556,9 +15548,9 @@ Publish interval: 1 sec  </p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Response</span><span class="w">
 </span><span class="p">{</span><span class="w">
-    </span><span class="err">s</span><span class="p">:</span><span class="w"> </span><span class="s2">".DEETHUSDT"</span><span class="p">,</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="err">spot</span><span class="w"> </span><span class="err">index</span><span class="w"> </span><span class="err">symbol</span><span class="w">
-    </span><span class="err">p</span><span class="p">:</span><span class="w"> </span><span class="mf">1349.3412141</span><span class="p">,</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="err">spot</span><span class="w"> </span><span class="err">price</span><span class="w">
-    </span><span class="err">type</span><span class="p">:</span><span class="w"> </span><span class="s2">"v2/spot_price"</span><span class="w">
+    </span><span class="s2">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">".DEETHUSDT"</span><span class="p">,</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="err">spot</span><span class="w"> </span><span class="err">index</span><span class="w"> </span><span class="err">symbol</span><span class="w">
+    </span><span class="s2">"p"</span><span class="p">:</span><span class="w"> </span><span class="mf">1349.3412141</span><span class="p">,</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="err">spot</span><span class="w"> </span><span class="err">price</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v2/spot_price"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='spot_30mtwap_price'>spot_30mtwap_price</h2>
 <p><strong>spot_30mtwap_price</strong> channel provides a real time feed of the 30 min twap of underlying index prices. 
@@ -15583,10 +15575,10 @@ This is the price used for settlement of options. Specifying symbols when subscr
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Spot</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="err">minutes</span><span class="w"> </span><span class="err">twap</span><span class="w"> </span><span class="err">Price</span><span class="w"> </span><span class="err">Response</span><span class="w">
 </span><span class="p">{</span><span class="w">
-    </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">".DEXBTUSDT"</span><span class="p">,</span><span class="w">
-    </span><span class="err">price</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0014579"</span><span class="p">,</span><span class="w">
-    </span><span class="err">type</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot_30mtwap_price"</span><span class="p">,</span><span class="w">
-    </span><span class="err">timestamp</span><span class="p">:</span><span class="w"> </span><span class="mi">1561634049751430</span><span class="w">
+    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">".DEXBTUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0014579"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"spot_30mtwap_price"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1561634049751430</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='funding_rate'>funding_rate</h2>
 <p><strong>funding_rate</strong> channel provides a real time feed of funding rates for perpetual contracts.</p>
@@ -15614,14 +15606,14 @@ Please note that if you subscribe to funding rate channel without specifying the
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Funding</span><span class="w"> </span><span class="err">Rate</span><span class="w"> </span><span class="err">Response</span><span class="w">
 </span><span class="p">{</span><span class="w">
-    </span><span class="err">symbol</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
-    </span><span class="err">product_id</span><span class="p">:</span><span class="w"> </span><span class="mi">139</span><span class="p">,</span><span class="w">
-    </span><span class="err">type</span><span class="p">:</span><span class="w"> </span><span class="s2">"funding_rate"</span><span class="p">,</span><span class="w">
-    </span><span class="err">funding_rate</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005701298078111892</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">%</span><span class="w">
-    </span><span class="err">funding_rate_</span><span class="mi">8</span><span class="err">h</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005701298078111892</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">%</span><span class="w">
-    </span><span class="err">next_funding_realization</span><span class="p">:</span><span class="w"> </span><span class="mi">1683734400000000</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">%</span><span class="w">
-    </span><span class="err">predicted_funding_rate</span><span class="p">:</span><span class="w"> </span><span class="mf">0.007221329334075148</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">us</span><span class="w">
-    </span><span class="err">timestamp</span><span class="p">:</span><span class="w"> </span><span class="mi">1683711930547419</span><span class="w">   </span><span class="err">//</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">us</span><span class="w">
+    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">139</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"funding_rate"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"funding_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005701298078111892</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">%</span><span class="w">
+    </span><span class="s2">"funding_rate_8h"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.005701298078111892</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">%</span><span class="w">
+    </span><span class="s2">"next_funding_realization"</span><span class="p">:</span><span class="w"> </span><span class="mi">1683734400000000</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">%</span><span class="w">
+    </span><span class="s2">"predicted_funding_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.007221329334075148</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">us</span><span class="w">
+    </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1683711930547419</span><span class="w">   </span><span class="err">//</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">us</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='product_updates'>product_updates</h2>
 <p>This channel provides updates when markets are disrupted and resumed. On opening, we conduct a single price auction and auction starting and finish events are also published on this channel. To subscribe, you dont need to pass the symbol list. This channel automatically subscribes to all markets by default.</p>
@@ -15910,7 +15902,7 @@ Please note that if you subscribe to orders channel without specifying the symbo
         </span><span class="s2">"channels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"orders"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"symbols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"BTCUSD_29Mar"</span><span class="p">]</span><span class="w">
+                </span><span class="s2">"symbols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"BTCUSDT"</span><span class="p">]</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -16007,7 +15999,7 @@ Please note that if you subscribe to user trades channel without specifying the 
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BNBBTC_30Nov"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"fill_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234-abcd-qwer-3456"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal"</span><span class="w">                      </span><span class="err">//</span><span class="w"> </span><span class="s2">"normal"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"adl"</span><span class="w">
+    </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal"</span><span class="p">,</span><span class="w">                      </span><span class="err">//</span><span class="w"> </span><span class="s2">"normal"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"adl"</span><span class="w">
     </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_trades"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1998</span><span class="p">,</span><span class="w">
@@ -16052,7 +16044,7 @@ Please note that if you subscribe to v2/user_trades channel without specifying t
     </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"v2/user_trades"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"sy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">             </span><span class="err">//</span><span class="w"> </span><span class="err">symbol</span><span class="w">
     </span><span class="s2">"f"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234-abcd-qwer-3456"</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">fill_id</span><span class="w">
-    </span><span class="s2">"R"</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal"</span><span class="w">                </span><span class="err">//</span><span class="w"> </span><span class="err">reason</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"adl"</span><span class="w">
+    </span><span class="s2">"R"</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal"</span><span class="p">,</span><span class="w">                </span><span class="err">//</span><span class="w"> </span><span class="err">reason</span><span class="p">:</span><span class="w"> </span><span class="s2">"normal"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"adl"</span><span class="w">
     </span><span class="s2">"u"</span><span class="p">:</span><span class="w"> </span><span class="mi">1998</span><span class="p">,</span><span class="w">                   </span><span class="err">//</span><span class="w"> </span><span class="err">user_id</span><span class="w">
     </span><span class="s2">"o"</span><span class="p">:</span><span class="w"> </span><span class="mi">3283999</span><span class="p">,</span><span class="w">                </span><span class="err">//</span><span class="w"> </span><span class="err">order_id</span><span class="w">
     </span><span class="s2">"S"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">                  </span><span class="err">//</span><span class="w"> </span><span class="err">side</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"sell"</span><span class="w">
@@ -16176,83 +16168,22 @@ Please note that if you subscribe to v2/user_trades channel without specifying t
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight plaintext"><code>// mmp_trigger response
-{
-    user_id: 1,
-    asset: "BTC",
-    frozen_till: 1561634049751430     # timestamp is microseconds, will be -1 if manual reset is enabled 
-}
-</code></pre>
+</span></code></pre><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">mmp_trigger</span><span class="w"> </span><span class="err">response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"frozen_till"</span><span class="p">:</span><span class="w"> </span><span class="mi">1561634049751430</span><span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="err">timestamp</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">microseconds</span><span class="p">,</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="mi">-1</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">manual</span><span class="w"> </span><span class="err">reset</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">enabled</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
-<h1 id='web-socket-rpc'>Web Socket RPC</h1>
-
-<p>You can make requests over rpc (Remote Procedure Call) using the socket api. Almost all rest endpoints can be invoked as rpc calls to the Web Socket Server.</p>
-
-<p>Remote Procedure Call (RPC) is a protocol that one program can use to request a service from a program located in another computer in a network without having to understand network details. RPC uses the client/server model. The requesting program is a client and the service-providing program is the server.</p>
-
-<p>The client sends request message to the server and then waits for the response. 
-Socket connection needs to be <a href="/#authenticating-a-connection">authenticated</a> to make RPC requests.</p>
-
-<h2 id='request-message'>Request Message</h2>
-
-<p>The request message must be JSON object with the following fields.</p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>type</td>
-<td>string</td>
-<td>Type of request message.</td>
-</tr>
-<tr>
-<td>payload</td>
-<td>object</td>
-<td>The payload object contains method, params and id.</td>
-</tr>
-<tr>
-<td>method</td>
-<td>string</td>
-<td>The method to be invoked.</td>
-</tr>
-<tr>
-<td>params</td>
-<td>object</td>
-<td>The parameters for the method that needs to be invoked.</td>
-</tr>
-<tr>
-<td>id</td>
-<td>string</td>
-<td>An identifier of the request. If it is included, then the response will contain the same identifier</td>
-</tr>
-</tbody></table>
-
-<p><pre class="highlight plaintext"><code>// Socket RPC request message sample
-{
-    &quot;type&quot;: &quot;rpc&quot;,
-    &quot;payload&quot; : {
-        &quot;method&quot;: &quot;post/orders&quot;,
-        &quot;params&quot; : {
-            &quot;order_type&quot;:&quot;limit_order&quot;,
-            &quot;size&quot;:1,
-            &quot;side&quot;:&quot;buy&quot;,
-            &quot;limit_price&quot;:&quot;100000&quot;,
-            &quot;product_id&quot;:139,
-            &quot;post_only&quot;:&quot;false&quot;,
-            &quot;reduce_only&quot;:&quot;false&quot;,
-            &quot;time_in_force&quot;:&quot;gtc&quot;
-        },
-        &quot;id&quot;: &quot;1234&quot;
-    } 
-}
-</code></pre><h2 id='response-message'>Response Message</h2>
-<p>The response message will be similar to the REST API.</p></p>
-
-<h1 id='changelog'>Changelog</h1><h2 id='18-10-2024'>18.10.2024</h2>
+<h1 id='changelog'>Changelog</h1><h2 id='20-02-25'>20.02.25</h2>
+<ol>
+<li>Removed Websocket RPC section. Use REST API endpoints with normal HTTP requests (RPC requests still work, it is recommended not to use them).</li>
+<li>Fixed documentation: &quot;User-Agent&quot; header is necessary for authenticated HTTP requests.</li>
+<li>Fixed documentation: Better examples and documentation under &#39;General Information&#39;, &#39;Authentication&#39;, etc tabs.</li>
+<li>Created separate documentation site for Indian and Global site for easier understanding and better examples for both.</li>
+</ol>
+<h2 id='18-10-2024'>18.10.2024</h2>
 <ol>
 <li>Added clickable links to the corresponding API response json schemas under some API &quot;Responses&quot; table. Updated some schemas to match the response. (This is a documentation fix, no changes in API)</li>
 <li>Added &quot;Testnet&quot; REST and Websocket host endpoints.</li>
@@ -16278,21 +16209,21 @@ Socket connection needs to be <a href="/#authenticating-a-connection">authentica
 <pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">format</span><span class="w"> </span><span class="err">supports</span><span class="w"> </span><span class="err">sending</span><span class="w"> </span><span class="err">meta</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">alongside</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">body.</span><span class="w"> 
 </span><span class="err">//</span><span class="w"> </span><span class="err">Success</span><span class="w"> </span><span class="err">format</span><span class="w">
 </span><span class="p">{</span><span class="w">
-  </span><span class="err">success</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="err">result</span><span class="p">:</span><span class="w"> </span><span class="err">....</span><span class="p">,</span><span class="w">         </span><span class="err">//</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">body</span><span class="w">
-  </span><span class="err">meta</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">after</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">       </span><span class="err">//</span><span class="w"> </span><span class="err">cursor</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">pagination</span><span class="p">,</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">returned</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">meta</span><span class="w">
-    </span><span class="err">before</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"...."</span><span class="p">,</span><span class="w">         </span><span class="err">//</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">body</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"after"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">       </span><span class="err">//</span><span class="w"> </span><span class="err">cursor</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">pagination</span><span class="p">,</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">returned</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">meta</span><span class="w">
+    </span><span class="s2">"before"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="p">},</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span><span class="err">//</span><span class="w"> </span><span class="err">Error</span><span class="w"> </span><span class="err">Format</span><span class="w">
 </span><span class="p">{</span><span class="w">
-  </span><span class="err">success</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="err">error</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">code</span><span class="p">:</span><span class="w"> </span><span class="p">:</span><span class="err">insufficient_margin</span><span class="p">,</span><span class="w">             </span><span class="err">//</span><span class="w"> </span><span class="err">error</span><span class="w"> </span><span class="err">code</span><span class="w">
-    </span><span class="err">context</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                              </span><span class="err">//</span><span class="w"> </span><span class="err">error</span><span class="w"> </span><span class="err">context</span><span class="w">
-      </span><span class="err">additional_margin_required</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.121"</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"insufficient_margin"</span><span class="p">,</span><span class="w">             </span><span class="err">//</span><span class="w"> </span><span class="err">error</span><span class="w"> </span><span class="err">code</span><span class="w">
+    </span><span class="s2">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                              </span><span class="err">//</span><span class="w"> </span><span class="err">error</span><span class="w"> </span><span class="err">context</span><span class="w">
+      </span><span class="s2">"additional_margin_required"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.121"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
