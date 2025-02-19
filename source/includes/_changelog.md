@@ -1,5 +1,11 @@
 # Changelog
 
+## 20.02.25
+1. Removed Websocket RPC section. Use REST API endpoints with normal HTTP requests (RPC requests still work, it is recommended not to use them).
+2. Fixed documentation: "User-Agent" header is necessary for authenticated HTTP requests.
+3. Fixed documentation: Better examples and documentation under 'General Information', 'Authentication', etc tabs.
+4. Created separate documentation site for Indian and Global site for easier understanding and better examples for both.
+
 ## 18.10.2024
 1. Added clickable links to the corresponding API response json schemas under some API "Responses" table. Updated some schemas to match the response. (This is a documentation fix, no changes in API)
 2. Added "Testnet" REST and Websocket host endpoints.
@@ -24,21 +30,21 @@ Our v2 Api is significantly faster than the v1 api. Our focus while rebuilding v
 // The new format supports sending meta data alongside response body. 
 // Success format
 {
-  success: true,
-  result: ....,         // response body
-  meta: {
-    after: "...",       // cursor for pagination, is returned in meta
-    before: null,
+  "success": true,
+  "result": "....",         // response body
+  "meta": {
+    "after": "...",       // cursor for pagination, is returned in meta
+    "before": null,
   },
 }
 
 // Error Format
 {
-  success: false,
-  error: {
-    code: :insufficient_margin,             // error code
-    context: {                              // error context
-      additional_margin_required: "0.121"
+  "success": false,
+  "error": {
+    "code": "insufficient_margin",             // error code
+    "context": {                              // error context
+      "additional_margin_required": "0.121"
     }
   }
 }

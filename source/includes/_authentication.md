@@ -114,7 +114,7 @@ req_headers = {
   'api-key': api_key,
   'timestamp': timestamp,
   'signature': signature,
-  'User-Agent': 'rest-client',
+  'User-Agent': 'python-rest-client',
   'Content-Type': 'application/json'
 }
 query = {"product_id": 139, "state": 'open'}
@@ -136,7 +136,7 @@ req_headers = {
   'api-key': api_key,
   'timestamp': timestamp,
   'signature': signature,
-  'User-Agent': 'rest-client',
+  'User-Agent': 'python-rest-client',
   'Content-Type': 'application/json'
 }
 

@@ -650,7 +650,7 @@ Please note that if you subscribe to all_trades channel without specifying the s
             "price": "25816.5",
             "timestamp": 1686577411879974   // time of the trade.
         },
-        ... // More recent trades.
+         // More recent trades.
     ]
 }
 ```
@@ -658,13 +658,13 @@ Please note that if you subscribe to all_trades channel without specifying the s
 ```json
 // All Trades Response
 {
-    symbol: "BTCUSDT",
-    price: "25816.5",
-    size: 100,
-    type: "all_trades",
-    buyer_role: "maker",
-    seller_role: "taker",
-    timestamp: 1686577411879974
+    "symbol": "BTCUSDT",
+    "price": "25816.5",
+    "size": 100,
+    "type": "all_trades",
+    "buyer_role": "maker",
+    "seller_role": "taker",
+    "timestamp": 1686577411879974
 }
 ```
 
@@ -749,9 +749,9 @@ Publish interval: 2 secs.
 ```json
 // Spot Price Response
 {
-    symbol: ".DEBNBBTC",
-    price: "0.0014579",
-    type: "spot_price"
+    "symbol": ".DEBNBBTC",
+    "price": "0.0014579",
+    "type": "spot_price"
 }
 ```
 
@@ -782,9 +782,9 @@ Publish interval: 1 sec
 ```json
 // Response
 {
-    s: ".DEETHUSDT",   # spot index symbol
-    p: 1349.3412141,   # spot price
-    type: "v2/spot_price"
+    "s": ".DEETHUSDT",   # spot index symbol
+    "p": 1349.3412141,   # spot price
+    "type": "v2/spot_price"
 }
 ```
 
@@ -815,10 +815,10 @@ This is the price used for settlement of options. Specifying symbols when subscr
 ```json
 // Spot 30 minutes twap Price Response
 {
-    symbol: ".DEXBTUSDT",
-    price: "0.0014579",
-    type: "spot_30mtwap_price",
-    timestamp: 1561634049751430
+    "symbol": ".DEXBTUSDT",
+    "price": "0.0014579",
+    "type": "spot_30mtwap_price",
+    "timestamp": 1561634049751430
 }
 ```
 
@@ -852,14 +852,14 @@ Please note that if you subscribe to funding rate channel without specifying the
 ```json
 // Funding Rate Response
 {
-    symbol: "BTCUSDT",
-    product_id: 139,
-    type: "funding_rate",
-    funding_rate: 0.005701298078111892,  // %
-    funding_rate_8h: 0.005701298078111892, // %
-    next_funding_realization: 1683734400000000 // %
-    predicted_funding_rate: 0.007221329334075148, // in us
-    timestamp: 1683711930547419   // in us
+    "symbol": "BTCUSDT",
+    "product_id": 139,
+    "type": "funding_rate",
+    "funding_rate": 0.005701298078111892,  // %
+    "funding_rate_8h": 0.005701298078111892, // %
+    "next_funding_realization": 1683734400000000, // %
+    "predicted_funding_rate": 0.007221329334075148, // in us
+    "timestamp": 1683711930547419   // in us
 }
 ```
 
@@ -1178,7 +1178,7 @@ Please note that if you subscribe to orders channel without specifying the symbo
         "channels": [
             {
                 "name": "orders",
-                "symbols": ["BTCUSD_29Mar"]
+                "symbols": ["BTCUSDT"]
             }
         ]
     }
@@ -1281,7 +1281,7 @@ Please note that if you subscribe to user trades channel without specifying the 
 {
     "symbol": "BNBBTC_30Nov",
     "fill_id": "1234-abcd-qwer-3456",
-    "reason": "normal"                      // "normal" or "adl"
+    "reason": "normal",                      // "normal" or "adl"
     "product_id": 7,
     "type": "user_trades",
     "user_id": 1998,
@@ -1330,7 +1330,7 @@ Please note that if you subscribe to v2/user_trades channel without specifying t
     "type": "v2/user_trades",
     "sy": "BTCUSDT",             // symbol
     "f": "1234-abcd-qwer-3456",  // fill_id
-    "R": "normal"                // reason: "normal" or "adl"
+    "R": "normal",                // reason: "normal" or "adl"
     "u": 1998,                   // user_id
     "o": 3283999,                // order_id
     "S": "buy",                  // side: "buy" or "sell"
@@ -1457,11 +1457,11 @@ Channel provides updates when MMP is triggered. Market maker protection is avail
     }
 }
 ```
-```
+```json
 // mmp_trigger response
 {
-    user_id: 1,
-    asset: "BTC",
-    frozen_till: 1561634049751430     # timestamp is microseconds, will be -1 if manual reset is enabled 
+    "user_id": 1,
+    "asset": "BTC",
+    "frozen_till": 1561634049751430     # timestamp is microseconds, will be -1 if manual reset is enabled 
 }
 ```
