@@ -2,7 +2,7 @@
 
 Websocket api can be used for the following use cases
 
-- Get real time feed of market data, this includes L2 and L3 orderbook and recent trades.
+- Get real time feed of market data, this includes L2 orderbook and recent trades.
 - Get price feeds - Mark prices of different contracts, price feed of underlying indexes etc.
 - Get account specific notifications like fills, liquidations, [ADL](https://global.delta.exchange/user-guide/docs/trading-guide/ADL/) and PnL updates.
 - Get account specific updates on orders, positions and wallets.
@@ -12,8 +12,9 @@ Access url for [Delta Exchange Global](https://global.delta.exchange)
 - **Production** - wss://socket.delta.exchange
 - **Testnet(Demo Account)** - wss://testnet-socket.delta.exchange
 
+There is a limit of 150 connections every 5 minutes per IP address. A connection attempt that goes beyond the limit will be disconnected with 429 HTTP status error. On receiving this error, wait for 5 to 10 minutes before making new connection requests.
 
- You will be disconnected, if there is no activity within 60 seconds after making connection.
+You will be disconnected, if there is no activity within 60 seconds after making connection.
 
 # Subscribing to Channels
 
