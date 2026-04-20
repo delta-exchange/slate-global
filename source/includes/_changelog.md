@@ -1,7 +1,8 @@
 # Changelog
 ## 17.04.26
 1. The following WebSocket channels have been migrated to the **new public WebSocket endpoint** (`wss://public-socket.india.delta.exchange`). The new channels provide the same data with a more compact response format. The old channels on the **legacy private endpoint** (`wss://socket.delta.exchange`) will continue to work but are planned to be deprecated and removed on **31st July 2026** — please update your integrations before that date.
-The new channels are: [`mark_price`](#mark_price), [`candlesticks`](#candlesticks), [`spot_price`](#spot_price), [`funding_rate`](#funding_rate).
+
+The new channels are: [`mark_price`](#mark_price), [`candlesticks`](#candlesticks), [`spot_price`](#spot_price), [`funding_rate`](#funding_rate), [`system_status`](#system_status).
 
 2. The following legacy WebSocket channels have been migrated to the **new public WebSocket endpoint** (`wss://public-socket.india.delta.exchange`). The old channels on the **legacy private endpoint** (`wss://socket.delta.exchange`) will continue to work but are planned to be deprecated and removed on **31st July 2026** — please update your integrations before that date.
 
@@ -10,6 +11,9 @@ The new channels are: [`mark_price`](#mark_price), [`candlesticks`](#candlestick
 | `l1_orderbook` | [`ob_l1`](#ob_l1) |
 | `l2_orderbook` | [`ob_l2`](#ob_l2) |
 | `l2_updates` | [`ob_updates`](#ob_updates) |
+| `v2/ticker` | [`ticker`](#ticker) |
+| `all_trades` | [`trades`](#trades) |
+| `v2/spot_price` | [`spot_price`](#spot_price) |
 
 ## 21.03.25
 1. Better documentation for Websocket public channel 'candlesticks', now clearly states even Mark Price candles can be fetched.
