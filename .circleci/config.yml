@@ -8,12 +8,12 @@ jobs:
       - run:
           name: apt install
           command: |
-            sudo apt-get update \
-                && sudo apt-get install -y --no-install-recommends \
+            apt-get update \
+                && apt-get install -y --no-install-recommends \
                     build-essential \
                     git \
-                && sudo gem install bundler -v 2.4.22 \
-                && sudo bundle install
+                && gem install bundler -v 2.4.22 \
+                && bundle install
       - run:
           name: install nodejs
           command: |
@@ -46,4 +46,3 @@ workflows:
               only:
                 - master
                 - slate-global/nodejs-upgrade
-                
