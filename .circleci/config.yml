@@ -8,12 +8,12 @@ jobs:
       - run:
           name: apt install
           command: |
-            apt-get update \
-                && apt-get install -y --no-install-recommends \
+            sudo apt-get update \
+                && sudo apt-get install -y --no-install-recommends \
                     build-essential \
                     git \
-                && gem install bundler -v 2.4.22 \
-                && bundle install
+                && sudo gem install bundler -v 2.4.22 \
+                && sudo bundle install
       - run:
           name: install nodejs
           command: |
