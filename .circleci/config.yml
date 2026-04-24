@@ -6,8 +6,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "SHA256:QzBj+pwe/pea5pLcDRM0+FX+tYsqbPT6oO+1zNQ+Oc0" # added ashutosh keys
-            #- "SHA256:DamVOQKLp697/bKqJ7gm749JISeNDCOPv+c/ShJQDf0"
+            - "SHA256:OfLiJOuDFD8ZMPXdnVaERCVmd/gxOqOEeRcY6rocboo" 
       - checkout
       - checkout
       - run:
