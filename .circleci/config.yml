@@ -34,4 +34,3 @@ workflows:
             branches:
               only:
                 - master
-                - slate-global/nodejs-upgrade
