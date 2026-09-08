@@ -1,9 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "## REST API for Delta Exchange\nFind out more on [Delta Exchange Global](https://global.delta.exchange)\n",
+    "description": "## REST API for Faida Trade\nFind out more on [Faida Trade](https://www.faida.trade)\n",
     "version": "1.0.0",
-    "title": "Delta Exchange Api V2",
+    "title": "Faida Trade Api V2",
     "termsOfService": "https://docs.google.com/document/d/e/2PACX-1vSDARn3b_VlmGZjJjlROm0MFpxX6KoLzVrqPZLSD4rh7sBhpP6kDP8WMSgUlaitwjCBUBd3-fV-MDId/pub",
     "contact": {
       "email": "support@delta.exchange"
@@ -112,7 +112,7 @@
         ],
         "operationId": "getIndices",
         "summary": "Get indices",
-        "description": "Indices refer to spot price indices that Delta Exchange creates by combining spot prices of prominent crypto exchanges. These indices form the underlying of futures and options contracts listed on Delta Exchange. All details of indices on Delta Exchange are available [here](https://global.delta.exchange/indices).",
+        "description": "Indices refer to spot price indices that Faida Trade creates by combining spot prices of prominent crypto exchanges. These indices form the underlying of futures and options contracts listed on Faida Trade. All details of indices on Faida Trade are available [here](https://www.faida.trade/indices).",
         "produces": [
           "application/json"
         ],
@@ -3128,7 +3128,7 @@
     },
     "ProductCategories": {
       "type": "object",
-      "description": "List of all the product category names on delta exchange. Please refer to this list while subscribing to various public and private channels on delta exchange websocket",
+      "description": "List of all the product category names on faida trade. Please refer to this list while subscribing to various public and private channels on faida trade websocket",
       "properties": {
         "PutOptions": {
           "type": "string",

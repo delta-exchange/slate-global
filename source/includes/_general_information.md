@@ -1,6 +1,6 @@
 # General Information
 ## Definitions
-  **Assets:** are cryptocurrencies or fiat currencies. Each asset has a 3/4 letter code (e.g. BTC, USDC). A derivative contract on Delta Exchange will entail multiple assets, namely:
+  **Assets:** are cryptocurrencies or fiat currencies. Each asset has a 3/4 letter code (e.g. BTC, USDC). A derivative contract on Faida Trade will entail multiple assets, namely:
 
    - **Underlying Asset:** This is the asset over which a futures or perpetual contract is defined. For e.g. the underlying asset of the BTCUSDT perpetual contract is BTC. 
 
@@ -8,7 +8,7 @@
    
    - **Settling Asset:** The asset in which the margin and Profit/ Loss of a contract is denominated. For e.g. the BTCUSDT contract is margined and settled in BTC. Therefore, the settling asset of the contract is BTC.
 
-**Products**: are the derivative contracts listed on Delta Exchange. Each contract can be referred by either its Product ID (e.g. 27 is the Product ID of BTCUSDT contract) or Symbol (BTCUSDT is the symbol for BTCUSDT contract). It is worth noting that Orders, Orderbook APIs expect Product IDs. 
+**Products**: are the derivative contracts listed on Faida Trade. Each contract can be referred by either its Product ID (e.g. 27 is the Product ID of BTCUSDT contract) or Symbol (BTCUSDT is the symbol for BTCUSDT contract). It is worth noting that Orders, Orderbook APIs expect Product IDs. 
 e.g
 
 product_id| symbol |product_type| description
@@ -29,7 +29,7 @@ product_id| symbol |product_type| description
   
 **Mark Price:** Each contract has a unique [Mark Price](https://global.delta.exchange/user-guide/)  which can be referred to by: **MARK: Contract_Symbol (MARK:BTCUSDT)** 
 
-**Index Price:** The prices of the underlying assets for the contracts listed on Delta Exchange are obtained from various spot exchanges, and are computed by averaging prices from multiple exchanges. Details of all the indices are available on this [page](https://global.delta.exchange/indices/).
+**Index Price:** The prices of the underlying assets for the contracts listed on Faida Trade are obtained from various spot exchanges, and are computed by averaging prices from multiple exchanges. Details of all the indices are available on this [page](https://www.faida.trade/indices/).
   
 
 For a given Underlying Asset/ Quoting Asset pair, the Index price symbol is: ***.DE|Underlying Asset|Quoting Asset|*** 
@@ -79,4 +79,4 @@ https://api.delta.exchange/v2/products?page_size=30
 https://api.delta.exchange/v2/products?page_size=30&after=after_cursor_from_last_request
 
 ## Data Centers 
-Delta Exchange data centers are in **AWS Tokyo**
+Faida Trade data centers are in **AWS Tokyo**

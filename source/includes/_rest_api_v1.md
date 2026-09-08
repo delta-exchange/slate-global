@@ -6,7 +6,7 @@ REST API Endpoint URL for Delta Exchange India
  - **Production-India** - https://api.delta.exchange/v2
  - **Testnet-India** - https://cdn-ind.testnet.deltaex.org/v2
 
-REST API Endpoint URL for Delta Exchange Global
+REST API Endpoint URL for Faida Trade
 
 - **Production-Global** - https://api.delta.exchange/v2
 - **Testnet-Global** - https://testnet-api.delta.exchange/v2

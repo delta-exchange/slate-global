@@ -1,7 +1,7 @@
 <h1 id="ApiSection" class="section-header">Rest Api</h1>
-This section documents the latest(v2) api for trading on Delta Exchange. The REST API has endpoints for account and order management as well as public market data.
+This section documents the latest(v2) api for trading on Faida Trade. The REST API has endpoints for account and order management as well as public market data.
 
-REST API Endpoint URL for [Delta Exchange Global](https://global.delta.exchange/)
+REST API Endpoint URL for [Faida Trade](https://www.faida.trade/)
 
 - **Production** - https://api.delta.exchange
 - **Testnet(Demo Account)** - https://testnet-api.delta.exchange

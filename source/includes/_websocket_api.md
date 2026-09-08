@@ -7,7 +7,7 @@ Websocket api can be used for the following use cases
 - Get account specific notifications like fills, liquidations, [ADL](https://global.delta.exchange/user-guide/docs/trading-guide/ADL/) and PnL updates.
 - Get account specific updates on orders, positions and wallets.
 
-Access url for [Delta Exchange Global](https://global.delta.exchange)
+Access url for [Faida Trade](https://www.faida.trade)
 
 <ul>
 <li><strong>Production private channel endpoint</strong> - wss://socket.delta.exchange</li>
@@ -199,7 +199,7 @@ ws.send(json.dumps({
 ## Public Channels
 
 **Summary:** 
-The python script(right panel) connects to the Delta Exchange WebSocket to receive real-time market data.
+The python script(right panel) connects to the Faida Trade WebSocket to receive real-time market data.
 
 - It opens a connection.
 - Subscribes to `v2/ticker`(tickers data) and `candlestick_1m`(1 minute ohlc candlesticks) channels. (**MARK:BTCUSDT** - mark price ohlc in candlesticks channel)
@@ -256,7 +256,7 @@ if __name__ == "__main__":
 ## Private Channels
 
 **Summary:** 
-The python script(right panel) connects to the Delta Exchange WebSocket to receive real-time market data.
+The python script(right panel) connects to the Faida Trade WebSocket to receive real-time market data.
 
 - It opens a connection.
 - Sends authentication payload over socket with api_key, signature & timestamp.

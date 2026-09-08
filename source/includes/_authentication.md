@@ -10,7 +10,7 @@ Api endpoints that place orders or fetch account related information needs to au
 
 * ```{ "error": "SignatureExpired", "message": "your signature has expired" }```
 
-**Explanation:**  This error occurs when the timestamp used to generate your API request signature is more than **5 seconds** old by the time it reaches Delta Exchange servers. The platform enforces this time window to prevent replay attacks. You can check server time and request time in the api error response too.
+**Explanation:**  This error occurs when the timestamp used to generate your API request signature is more than **5 seconds** old by the time it reaches Faida Trade servers. The platform enforces this time window to prevent replay attacks. You can check server time and request time in the api error response too.
 
 ### 🔧 Troubleshooting
 
@@ -50,12 +50,12 @@ signature = generate_signature(api_secret, signature_data)
 
 **1. Verify the Correct Environment**
 
-- API keys created at [Delta](https://global.delta.exchange) account must be used only with production apis.(prod api - [https://api.delta.exchange](https://api.delta.exchange))
-- API keys created at [Demo](https://demo-global.delta.exchange) account must be used only with testnet apis.(testnet api - [https://testnet-api.delta.exchange](https://testnet-api.delta.exchange)) 
+- API keys created at [Delta](https://www.faida.trade) account must be used only with production apis.(prod api - [https://api.delta.exchange](https://api.delta.exchange))
+- API keys created at [Demo](https://demo.faida.trade) account must be used only with testnet apis.(testnet api - [https://testnet-api.delta.exchange](https://testnet-api.delta.exchange)) 
 
 **2. Check API Key Validity**
 
-- Log into Delta Exchange and confirm the key exists and is active.  
+- Log into Faida Trade and confirm the key exists and is active.  
 - Check for any typos in the key too.
 
 
@@ -63,13 +63,13 @@ signature = generate_signature(api_secret, signature_data)
 
 * ```{ "error": "UnauthorizedApiAccess", "message": "Api Key not authorised to access this endpoint" }```
 
-**Explanation:**  Your API key doesn't have permission to access this endpoint. Delta Exchange allows permission-based control for each key. There are two permissions given 1. Read Data ✅ 2. Trading ✅
+**Explanation:**  Your API key doesn't have permission to access this endpoint. Faida Trade allows permission-based control for each key. There are two permissions given 1. Read Data ✅ 2. Trading ✅
 
 ### 🔧 Troubleshooting
 
 **1. Check API Key Permissions**
 
-- Go to API Management on Delta Exchange.  
+- Go to API Management on Faida Trade.  
 - Verify respective permissions: 1. Read Data 2. Trading, are enabled ✅ or not.
 - If required, create a new api key with the right permissions enabled ✅.
 
@@ -88,13 +88,13 @@ signature = generate_signature(api_secret, signature_data)
 
 * ```{ "success": false, "error": { "code": "ip_not_whitelisted_for_api_key" } }```
 
-**Explanation:**  This occurs when the request originates from an IP not allowed for the given API key. Delta Exchange enforces IP whitelisting as a security measure. Consider whitelisting he IP returned into the api error response.
+**Explanation:**  This occurs when the request originates from an IP not allowed for the given API key.  Faida Trade enforces IP whitelisting as a security measure. Consider whitelisting he IP returned into the api error response.
 
 ### 🔧 Troubleshooting
 
 **1. Update IP Whitelist**
 
-- Log into Delta Exchange > API Management  
+- Log into Faida Trade > API Management  
 - Add your IP to the API key’s whitelist. The IP can be found into the api error response. 
 - You can whitelist a list of IPs too. Enter them as comma separated list.
 - Delta support both IPv4 and IPv6 formats for whitelisting.
@@ -131,7 +131,7 @@ signature = generate_signature(api_secret, signature_data)
 
 * ```{ "success": false, "error": { "code": "Signature Mismatch" } }```
 
-**Explanation:**  This error occurs when the signature generated on your end does not match the one received by Delta Exchange. This can happen due to incorrect timestamp, payload, or method used in the signature generation.
+**Explanation:**  This error occurs when the signature generated on your end does not match the one received by Faida Trade. This can happen due to incorrect timestamp, payload, or method used in the signature generation.
 
 ### 🔧 Troubleshooting
 
@@ -145,9 +145,9 @@ signature = generate_signature(api_secret, signature_data)
 - Check for any extra spaces or characters in the signature string.
 - Refer to the sample code block (see [Signing a Message](/#signing-a-message)).
 
-By following these troubleshooting steps, you can resolve common Delta Exchange API authentication and authorization issues. For persistent problems, contact Delta Exchange support.
+By following these troubleshooting steps, you can resolve common Faida Trade API authentication and authorization issues. For persistent problems, contact Faida Trade support.
 
-(Note - **api key creation blocked - When user enters wrong otp/mfa code more than 5 times, Delta exchange blocks api key creation for next 30 mins. After then, users can try creating again.**)
+(Note - **api key creation blocked - When user enters wrong otp/mfa code more than 5 times, Faida Trade blocks api key creation for next 30 mins. After then, users can try creating again.**)
 
 ## Generating an API Key
 
