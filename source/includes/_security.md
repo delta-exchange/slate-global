@@ -1,15 +1,15 @@
 # Security
-We take the security, integrity, availability of our services, and the privacy of our users seriously. We appreciate all security concerns brought forth and are constantly striving to keep on top of the latest threats. Being proactive rather than reactive to emerging security issues is a fundamental belief at Delta Exchange. Every day new security issues and attack vectors are created. Delta Exchange strives to keep abreast of the latest state-of-the-art security developments by working with independent security researchers. We appreciate the community's efforts in creating a more secure world.
+We take the security, integrity, availability of our services, and the privacy of our users seriously. We appreciate all security concerns brought forth and are constantly striving to keep on top of the latest threats. Being proactive rather than reactive to emerging security issues is a fundamental belief at Faida Trade. Every day new security issues and attack vectors are created. Faida Trade strives to keep abreast of the latest state-of-the-art security developments by working with independent security researchers. We appreciate the community's efforts in creating a more secure world.
 
 
 ## Targets In scope
 - https://*.delta.exchange
 
-Any domain/property of Delta Exchange Network not listed in the targets section is out of scope. This includes any/all subdomains not listed above.
+Any domain/property of Faida Trade Network not listed in the targets section is out of scope. This includes any/all subdomains not listed above.
 
 ## How to access
-- You will access the Delta Exchange service using test accounts and unauthenticated guests.
-- Please create a Delta Exchange test account on your own using your test email address. Your email must contain keyword 'test' for example *test*@gmail.com. 
+- You will access the Faida Trade service using test accounts and unauthenticated guests.
+- Please create a Faida Trade test account on your own using your test email address. Your email must contain keyword 'test' for example *test*@gmail.com. 
 - All emails will go to the email address associated with your account. You will need to activate your account by confirming receipt of the activation email.
 - NOTE: Once a vulnerability is found please file a submission immediately. Our security team will investigate and assess the impact.
 
@@ -30,11 +30,11 @@ Any domain/property of Delta Exchange Network not listed in the targets section 
 | P3  | Moderate  |  $10 - $100 |
 
 ## Rules of engagement
-We are interested in hearing about security issues in Production/Dev Delta Exchange environments. 
+We are interested in hearing about security issues in Production/Dev Faida Trade environments. 
 There are some things we explicitly ask you not to do
 
 - Do not run automated scans without checking with us first. They are often very noisy.(If running any automated testing tools, be sure to keep well under 75-100 requests per second - otherwise you're likely to get locked out.)
-- Do not test the physical security of Delta Exchange offices, employees, equipment, etc.
+- Do not test the physical security of Faida Trade offices, employees, equipment, etc.
 - Do not run Full fledged exploits which can cause application crashes and affect integrity of our active services. (If you believe you have a exploit that need serious fixes please email us, and we will provide you with said instance for said service.)
 - Do not test using social engineering techniques (phishing, vishing, etc.)
 - Do not test against any type of customer account without explicit permission from our side.
@@ -50,7 +50,7 @@ We take our Internal process and workflow seriously, We have a dedicated securit
 - For testing and reporting so that we can identify your activity on our environments, also whitelist for IDS/FDS blocks)
 - Do not CC or tag other staff while reporting.
 - Do not callout on social media or make blog posts to report or without reporting (this can lead to legal actions to be taken against you.)
-- Do not discuss this with any, but only Delta Exchange technical staff.
+- Do not discuss this with any, but only Faida Trade technical staff.
 - Do not send us external-links/executable/scripts in report if possible attach a text file or pdf. Without zipp'ing or rar'ing it.
 - Screenshots are accepted if only in PNG and JIF formats for internal security reasons.
 - POC Videos are accepted if only in MP4,AVI, WEBM, MOV formats for internal security reasons.
