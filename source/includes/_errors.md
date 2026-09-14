@@ -1,6 +1,6 @@
 # Errors
 
-Delta API uses the following error codes:
+Faida Trade API uses the following error codes:
 
 | Error Code | Meaning                                                                                   |
 | ---------- | ----------------------------------------------------------------------------------------- |
