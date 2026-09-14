@@ -1764,7 +1764,7 @@
                 },
                 "delta_margin": {
                   "type": "string",
-                  "description": "Delta in the position margin, positive in case of adding margin & negative in case of removing margin"
+                  "description": "Faida trade in the position margin, positive in case of adding margin & negative in case of removing margin"
                 }
               }
             }
