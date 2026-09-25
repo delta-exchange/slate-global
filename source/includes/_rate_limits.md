@@ -37,4 +37,4 @@ Even if you have not exceeded the rate limit on the REST API level, your request
 
 ## Increasing your rate limits
 
-If you are running up against our limits and believe that you have a legitimate need, please email us at [support@delta.exchange](mailto:support@delta.exchange) to discuss increasing your rate limits.
+If you are running up against our limits and believe that you have a legitimate need, please email us at [support@faida.trade](mailto:support@faida.trade) to discuss increasing your rate limits.

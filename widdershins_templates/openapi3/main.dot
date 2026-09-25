@@ -3,8 +3,8 @@ This section documents the latest(v2) api for trading on Faida Trade. The REST A
 
 REST API Endpoint URL for [Faida Trade](https://www.faida.trade/)
 
-- **Production** - https://api.delta.exchange
-- **Testnet(Demo Account)** - https://testnet-api.delta.exchange
+- **Production** - https://api.faida.trade
+- **Testnet(Demo Account)** - https://testnet-api.faida.trade
 
 {{ for (var r in data.resources) { }}
 {{ data.resource = data.resources[r]; }}

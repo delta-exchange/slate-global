@@ -124,7 +124,7 @@ $$PnL = -n*m*(Fut\_ExitPrice - Fut\_EntryPrice)\  (in \ BTC)$$
 
 $$PnL = -n*m*(Fut\_SettlementPrice - Fut\_EntryPrice) \  (in \  BTC) $$
 
- *Settlement price is determined at the maturity of the contract through a pre-defined method described in the [contract specifications](https://delta.exchange/contracts/) . All open positions at the time of contract maturity are closed at the settlement price.*
+ *Settlement price is determined at the maturity of the contract through a pre-defined method described in the [contract specifications](https://faida.trade/contracts/) . All open positions at the time of contract maturity are closed at the settlement price.*
 
 ## Inverse Futures
 
@@ -202,7 +202,7 @@ Existing positions on Delta are marked at [fair Price](#fpm). This means that yo
 
 ### Settlement
 
-You can square off a position in a derivatives contract in the exchange. Position that are held till maturity are cash settled at a price that is computed using the settlement method described in the [contract specifications](https://delta.exchange/contracts).
+You can square off a position in a derivatives contract in the exchange. Position that are held till maturity are cash settled at a price that is computed using the settlement method described in the [contract specifications](https://faida.trade/contracts).
 
   
 

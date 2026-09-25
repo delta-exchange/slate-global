@@ -27,7 +27,7 @@ product_id| symbol |product_type| description
     
     e.g. BTCUSDT, ETHUSDT, LEOUSDQ
   
-**Mark Price:** Each contract has a unique [Mark Price](https://global.delta.exchange/user-guide/)  which can be referred to by: **MARK: Contract_Symbol (MARK:BTCUSDT)** 
+**Mark Price:** Each contract has a unique [Mark Price](https://guides.faida.trade/) which can be referred to by: **MARK: Contract_Symbol (MARK:BTCUSDT)**
 
 **Index Price:** The prices of the underlying assets for the contracts listed on Faida Trade are obtained from various spot exchanges, and are computed by averaging prices from multiple exchanges. Details of all the indices are available on this [page](https://www.faida.trade/indices/).
   
@@ -74,9 +74,9 @@ In API response, meta data will contain the cursors as show below
   
 **Example**
 
-https://api.delta.exchange/v2/products?page_size=30
+https://api.faida.trade/v2/products?page_size=30
 
-https://api.delta.exchange/v2/products?page_size=30&after=after_cursor_from_last_request
+https://api.faida.trade/v2/products?page_size=30&after=after_cursor_from_last_request
 
 ## Data Centers 
 Faida Trade data centers are in **AWS Tokyo**
