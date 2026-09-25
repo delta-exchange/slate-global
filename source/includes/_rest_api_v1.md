@@ -8,8 +8,8 @@ REST API Endpoint URL for Delta Exchange India
 
 REST API Endpoint URL for Faida Trade
 
-- **Production-Global** - https://api.delta.exchange/v2
-- **Testnet-Global** - https://testnet-api.delta.exchange/v2
+- **Production-Global** - https://api.faida.trade/v2
+- **Testnet-Global** - https://testnet-api.faida.trade/v2
 
 
 
@@ -22,7 +22,7 @@ REST API Endpoint URL for Faida Trade
 ```python
 import requests
 
-r = requests.deprecated('https://api.delta.exchange/orders/bracket', params={
+r = requests.deprecated('https://api.faida.trade/orders/bracket', params={
 
 )
 
@@ -32,7 +32,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X DEPRECATED https://api.delta.exchange/orders/bracket
+curl -X DEPRECATED https://api.faida.trade/orders/bracket
 
 ```
 
@@ -40,7 +40,7 @@ curl -X DEPRECATED https://api.delta.exchange/orders/bracket
 require 'rest-client'
 require 'json'
 
-result = RestClient.deprecated 'https://api.delta.exchange/orders/bracket',
+result = RestClient.deprecated 'https://api.faida.trade/orders/bracket',
   params: {
   }
 
@@ -75,7 +75,7 @@ headers = {
   'Accept': 'application/json'
 }
 
-r = requests.get('https://api.delta.exchange/assets', params={
+r = requests.get('https://api.faida.trade/assets', params={
 
 }, headers = headers)
 
@@ -85,7 +85,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X GET https://api.delta.exchange/assets \
+curl -X GET https://api.faida.trade/assets \
   -H 'Accept: application/json'
 
 ```
@@ -98,7 +98,7 @@ headers = {
   'Accept' => 'application/json'
 }
 
-result = RestClient.get 'https://api.delta.exchange/assets',
+result = RestClient.get 'https://api.faida.trade/assets',
   params: {
   }, headers: headers
 
@@ -148,7 +148,7 @@ headers = {
   'Accept': 'application/json'
 }
 
-r = requests.get('https://api.delta.exchange/products', params={
+r = requests.get('https://api.faida.trade/products', params={
 
 }, headers = headers)
 
@@ -158,7 +158,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X GET https://api.delta.exchange/products \
+curl -X GET https://api.faida.trade/products \
   -H 'Accept: application/json'
 
 ```
@@ -171,7 +171,7 @@ headers = {
   'Accept' => 'application/json'
 }
 
-result = RestClient.get 'https://api.delta.exchange/products',
+result = RestClient.get 'https://api.faida.trade/products',
   params: {
   }, headers: headers
 
@@ -258,7 +258,7 @@ headers = {
   'Accept': 'application/json'
 }
 
-r = requests.get('https://api.delta.exchange/products/ticker/24hr', params={
+r = requests.get('https://api.faida.trade/products/ticker/24hr', params={
   'symbol': 'string'
 }, headers = headers)
 
@@ -268,7 +268,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X GET https://api.delta.exchange/products/ticker/24hr?symbol=string \
+curl -X GET https://api.faida.trade/products/ticker/24hr?symbol=string \
   -H 'Accept: application/json'
 
 ```
@@ -281,7 +281,7 @@ headers = {
   'Accept' => 'application/json'
 }
 
-result = RestClient.get 'https://api.delta.exchange/products/ticker/24hr',
+result = RestClient.get 'https://api.faida.trade/products/ticker/24hr',
   params: {
   'symbol' => 'string'
 }, headers: headers
@@ -344,7 +344,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.post('https://api.delta.exchange/orders', params={
+r = requests.post('https://api.faida.trade/orders', params={
 
 }, headers = headers)
 
@@ -354,7 +354,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X POST https://api.delta.exchange/orders \
+curl -X POST https://api.faida.trade/orders \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
@@ -375,7 +375,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.post 'https://api.delta.exchange/orders',
+result = RestClient.post 'https://api.faida.trade/orders',
   params: {
   }, headers: headers
 
@@ -530,7 +530,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.delete('https://api.delta.exchange/orders', params={
+r = requests.delete('https://api.faida.trade/orders', params={
 
 }, headers = headers)
 
@@ -540,7 +540,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X DELETE https://api.delta.exchange/orders \
+curl -X DELETE https://api.faida.trade/orders \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
@@ -561,7 +561,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.delete 'https://api.delta.exchange/orders',
+result = RestClient.delete 'https://api.faida.trade/orders',
   params: {
   }, headers: headers
 
@@ -696,7 +696,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.get('https://api.delta.exchange/orders', params={
+r = requests.get('https://api.faida.trade/orders', params={
 
 }, headers = headers)
 
@@ -706,7 +706,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X GET https://api.delta.exchange/orders \
+curl -X GET https://api.faida.trade/orders \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
   -H 'signature: ****' \
@@ -725,7 +725,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.get 'https://api.delta.exchange/orders',
+result = RestClient.get 'https://api.faida.trade/orders',
   params: {
   }, headers: headers
 
@@ -849,7 +849,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.put('https://api.delta.exchange/orders', params={
+r = requests.put('https://api.faida.trade/orders', params={
 
 }, headers = headers)
 
@@ -859,7 +859,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X PUT https://api.delta.exchange/orders \
+curl -X PUT https://api.faida.trade/orders \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
@@ -880,7 +880,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.put 'https://api.delta.exchange/orders',
+result = RestClient.put 'https://api.faida.trade/orders',
   params: {
   }, headers: headers
 
@@ -1024,7 +1024,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.delete('https://api.delta.exchange/orders/all', params={
+r = requests.delete('https://api.faida.trade/orders/all', params={
 
 }, headers = headers)
 
@@ -1034,7 +1034,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X DELETE https://api.delta.exchange/orders/all \
+curl -X DELETE https://api.faida.trade/orders/all \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
@@ -1055,7 +1055,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.delete 'https://api.delta.exchange/orders/all',
+result = RestClient.delete 'https://api.faida.trade/orders/all',
   params: {
   }, headers: headers
 
@@ -1131,7 +1131,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.post('https://api.delta.exchange/orders/bracket', params={
+r = requests.post('https://api.faida.trade/orders/bracket', params={
 
 }, headers = headers)
 
@@ -1141,7 +1141,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X POST https://api.delta.exchange/orders/bracket \
+curl -X POST https://api.faida.trade/orders/bracket \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
@@ -1162,7 +1162,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.post 'https://api.delta.exchange/orders/bracket',
+result = RestClient.post 'https://api.faida.trade/orders/bracket',
   params: {
   }, headers: headers
 
@@ -1367,7 +1367,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.post('https://api.delta.exchange/orders/batch', params={
+r = requests.post('https://api.faida.trade/orders/batch', params={
 
 }, headers = headers)
 
@@ -1377,7 +1377,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X POST https://api.delta.exchange/orders/batch \
+curl -X POST https://api.faida.trade/orders/batch \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
@@ -1398,7 +1398,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.post 'https://api.delta.exchange/orders/batch',
+result = RestClient.post 'https://api.faida.trade/orders/batch',
   params: {
   }, headers: headers
 
@@ -1551,7 +1551,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.put('https://api.delta.exchange/orders/batch', params={
+r = requests.put('https://api.faida.trade/orders/batch', params={
 
 }, headers = headers)
 
@@ -1561,7 +1561,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X PUT https://api.delta.exchange/orders/batch \
+curl -X PUT https://api.faida.trade/orders/batch \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
@@ -1582,7 +1582,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.put 'https://api.delta.exchange/orders/batch',
+result = RestClient.put 'https://api.faida.trade/orders/batch',
   params: {
   }, headers: headers
 
@@ -1675,7 +1675,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.delete('https://api.delta.exchange/orders/batch', params={
+r = requests.delete('https://api.faida.trade/orders/batch', params={
 
 }, headers = headers)
 
@@ -1685,7 +1685,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X DELETE https://api.delta.exchange/orders/batch \
+curl -X DELETE https://api.faida.trade/orders/batch \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
@@ -1706,7 +1706,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.delete 'https://api.delta.exchange/orders/batch',
+result = RestClient.delete 'https://api.faida.trade/orders/batch',
   params: {
   }, headers: headers
 
@@ -1844,7 +1844,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.post('https://api.delta.exchange/orders/leverage', params={
+r = requests.post('https://api.faida.trade/orders/leverage', params={
 
 }, headers = headers)
 
@@ -1854,7 +1854,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X POST https://api.delta.exchange/orders/leverage \
+curl -X POST https://api.faida.trade/orders/leverage \
   -H 'Content-Type: application/json' \
   -H 'Accept: */*' \
   -H 'api-key: ****' \
@@ -1875,7 +1875,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.post 'https://api.delta.exchange/orders/leverage',
+result = RestClient.post 'https://api.faida.trade/orders/leverage',
   params: {
   }, headers: headers
 
@@ -1948,7 +1948,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.get('https://api.delta.exchange/orders/leverage', params={
+r = requests.get('https://api.faida.trade/orders/leverage', params={
   'product_id': '0'
 }, headers = headers)
 
@@ -1958,7 +1958,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X GET https://api.delta.exchange/orders/leverage?product_id=0 \
+curl -X GET https://api.faida.trade/orders/leverage?product_id=0 \
   -H 'Accept: */*' \
   -H 'api-key: ****' \
   -H 'signature: ****' \
@@ -1977,7 +1977,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.get 'https://api.delta.exchange/orders/leverage',
+result = RestClient.get 'https://api.faida.trade/orders/leverage',
   params: {
   'product_id' => 'integer'
 }, headers: headers
@@ -2027,7 +2027,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.get('https://api.delta.exchange/positions', params={
+r = requests.get('https://api.faida.trade/positions', params={
 
 }, headers = headers)
 
@@ -2037,7 +2037,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X GET https://api.delta.exchange/positions \
+curl -X GET https://api.faida.trade/positions \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
   -H 'signature: ****' \
@@ -2056,7 +2056,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.get 'https://api.delta.exchange/positions',
+result = RestClient.get 'https://api.faida.trade/positions',
   params: {
   }, headers: headers
 
@@ -2156,7 +2156,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.post('https://api.delta.exchange/positions/change_margin', params={
+r = requests.post('https://api.faida.trade/positions/change_margin', params={
 
 }, headers = headers)
 
@@ -2166,7 +2166,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X POST https://api.delta.exchange/positions/change_margin \
+curl -X POST https://api.faida.trade/positions/change_margin \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
@@ -2187,7 +2187,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.post 'https://api.delta.exchange/positions/change_margin',
+result = RestClient.post 'https://api.faida.trade/positions/change_margin',
   params: {
   }, headers: headers
 
@@ -2324,7 +2324,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.get('https://api.delta.exchange/orders/history', params={
+r = requests.get('https://api.faida.trade/orders/history', params={
 
 }, headers = headers)
 
@@ -2334,7 +2334,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X GET https://api.delta.exchange/orders/history \
+curl -X GET https://api.faida.trade/orders/history \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
   -H 'signature: ****' \
@@ -2353,7 +2353,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.get 'https://api.delta.exchange/orders/history',
+result = RestClient.get 'https://api.faida.trade/orders/history',
   params: {
   }, headers: headers
 
@@ -2464,7 +2464,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.get('https://api.delta.exchange/fills', params={
+r = requests.get('https://api.faida.trade/fills', params={
 
 }, headers = headers)
 
@@ -2474,7 +2474,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X GET https://api.delta.exchange/fills \
+curl -X GET https://api.faida.trade/fills \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
   -H 'signature: ****' \
@@ -2493,7 +2493,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.get 'https://api.delta.exchange/fills',
+result = RestClient.get 'https://api.faida.trade/fills',
   params: {
   }, headers: headers
 
@@ -2603,7 +2603,7 @@ headers = {
   'Accept': 'application/json'
 }
 
-r = requests.get('https://api.delta.exchange/orderbook/{product_id}/l2', params={
+r = requests.get('https://api.faida.trade/orderbook/{product_id}/l2', params={
 
 }, headers = headers)
 
@@ -2613,7 +2613,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X GET https://api.delta.exchange/orderbook/{product_id}/l2 \
+curl -X GET https://api.faida.trade/orderbook/{product_id}/l2 \
   -H 'Accept: application/json'
 
 ```
@@ -2626,7 +2626,7 @@ headers = {
   'Accept' => 'application/json'
 }
 
-result = RestClient.get 'https://api.delta.exchange/orderbook/{product_id}/l2',
+result = RestClient.get 'https://api.faida.trade/orderbook/{product_id}/l2',
   params: {
   }, headers: headers
 
@@ -2704,7 +2704,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.get('https://api.delta.exchange/wallet/balances', params={
+r = requests.get('https://api.faida.trade/wallet/balances', params={
 
 }, headers = headers)
 
@@ -2714,7 +2714,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X GET https://api.delta.exchange/wallet/balances \
+curl -X GET https://api.faida.trade/wallet/balances \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
   -H 'signature: ****' \
@@ -2733,7 +2733,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.get 'https://api.delta.exchange/wallet/balances',
+result = RestClient.get 'https://api.faida.trade/wallet/balances',
   params: {
   }, headers: headers
 
@@ -2789,7 +2789,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.get('https://api.delta.exchange/wallet/transactions', params={
+r = requests.get('https://api.faida.trade/wallet/transactions', params={
   'asset_id': '0'
 }, headers = headers)
 
@@ -2799,7 +2799,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X GET https://api.delta.exchange/wallet/transactions?asset_id=0 \
+curl -X GET https://api.faida.trade/wallet/transactions?asset_id=0 \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
   -H 'signature: ****' \
@@ -2818,7 +2818,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.get 'https://api.delta.exchange/wallet/transactions',
+result = RestClient.get 'https://api.faida.trade/wallet/transactions',
   params: {
   'asset_id' => 'integer'
 }, headers: headers
@@ -2929,7 +2929,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.get('https://api.delta.exchange/wallet/download/transactions', params={
+r = requests.get('https://api.faida.trade/wallet/download/transactions', params={
   'asset_id': '0'
 }, headers = headers)
 
@@ -2939,7 +2939,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X GET https://api.delta.exchange/wallet/download/transactions?asset_id=0 \
+curl -X GET https://api.faida.trade/wallet/download/transactions?asset_id=0 \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
   -H 'signature: ****' \
@@ -2958,7 +2958,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.get 'https://api.delta.exchange/wallet/download/transactions',
+result = RestClient.get 'https://api.faida.trade/wallet/download/transactions',
   params: {
   'asset_id' => 'integer'
 }, headers: headers
@@ -3068,7 +3068,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.post('https://api.delta.exchange/wallet/withdrawals', params={
+r = requests.post('https://api.faida.trade/wallet/withdrawals', params={
 
 }, headers = headers)
 
@@ -3078,7 +3078,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X POST https://api.delta.exchange/wallet/withdrawals \
+curl -X POST https://api.faida.trade/wallet/withdrawals \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
@@ -3099,7 +3099,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.post 'https://api.delta.exchange/wallet/withdrawals',
+result = RestClient.post 'https://api.faida.trade/wallet/withdrawals',
   params: {
   }, headers: headers
 
@@ -3186,7 +3186,7 @@ headers = {
   'timestamp': '****'
 }
 
-r = requests.post('https://api.delta.exchange/wallet/withdrawals/cancel', params={
+r = requests.post('https://api.faida.trade/wallet/withdrawals/cancel', params={
 
 }, headers = headers)
 
@@ -3196,7 +3196,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X POST https://api.delta.exchange/wallet/withdrawals/cancel \
+curl -X POST https://api.faida.trade/wallet/withdrawals/cancel \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'api-key: ****' \
@@ -3217,7 +3217,7 @@ headers = {
   'timestamp' => '****'
 }
 
-result = RestClient.post 'https://api.delta.exchange/wallet/withdrawals/cancel',
+result = RestClient.post 'https://api.faida.trade/wallet/withdrawals/cancel',
   params: {
   }, headers: headers
 
@@ -3298,7 +3298,7 @@ headers = {
   'Accept': 'application/json'
 }
 
-r = requests.get('https://api.delta.exchange/chart/history', params={
+r = requests.get('https://api.faida.trade/chart/history', params={
   'symbol': 'string',  'from': '0',  'to': '0',  'resolution': '1'
 }, headers = headers)
 
@@ -3308,7 +3308,7 @@ print r.json()
 
 ```shell
 # You can also use wget
-curl -X GET https://api.delta.exchange/chart/history?symbol=string&from=0&to=0&resolution=1 \
+curl -X GET https://api.faida.trade/chart/history?symbol=string&from=0&to=0&resolution=1 \
   -H 'Accept: application/json'
 
 ```
@@ -3321,7 +3321,7 @@ headers = {
   'Accept' => 'application/json'
 }
 
-result = RestClient.get 'https://api.delta.exchange/chart/history',
+result = RestClient.get 'https://api.faida.trade/chart/history',
   params: {
   'symbol' => 'string',
 'from' => 'integer',

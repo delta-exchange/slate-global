@@ -4,17 +4,17 @@ Websocket api can be used for the following use cases
 
 - Get real time feed of market data, this includes L2 orderbook and recent trades.
 - Get price feeds - Mark prices of different contracts, price feed of underlying indexes etc.
-- Get account specific notifications like fills, liquidations, [ADL](https://global.delta.exchange/user-guide/docs/trading-guide/ADL/) and PnL updates.
+- Get account specific notifications like fills, liquidations, [ADL](https://guides.faida.trade/) and PnL updates.
 - Get account specific updates on orders, positions and wallets.
 
 Access url for [Faida Trade](https://www.faida.trade)
 
 <ul>
-<li><strong>Production private channel endpoint</strong> - wss://socket.delta.exchange</li>
-<li><strong>Production public channel endpoint</strong> - wss://public-socket.india.delta.exchange</li>
+<li><strong>Production private channel endpoint</strong> - wss://socket.faida.trade</li>
+<li><strong>Production public channel endpoint</strong> - wss://public-socket.faida.trade</li>
 <br>
-<li><strong>Testnet(Demo Account) private channel endpoint</strong> - wss://testnet-socket.delta.exchange</li>
-<li><strong>Testnet(Demo Account) public channel endpoint</strong> - wss://socket-ind-pub.testnet.deltaex.org</li>
+<li><strong>Testnet(Demo Account) private channel endpoint</strong> - wss://testnet-socket.faida.trade</li>
+<li><strong>Testnet(Demo Account) public channel endpoint</strong> - wss://testnet-socket-pub.faida.trade</li>
 </ul>
 
 There is a limit of 150 connections every 5 minutes per IP address. A connection attempt that goes beyond the limit will be disconnected with 429 HTTP status error. On receiving this error, wait for 5 to 10 minutes before making new connection requests.
@@ -170,7 +170,7 @@ path = '/live'
 signature_data = method + timestamp + path
 signature = generate_signature(api_secret, signature_data)
 
-ws = websocket.WebSocketApp('wss://socket.delta.exchange')
+ws = websocket.WebSocketApp('wss://socket.faida.trade')
 ws.send(json.dumps({
     "type": "auth",
     "payload": {
@@ -213,7 +213,7 @@ import websocket
 import json
 
 # production websocket base url
-WEBSOCKET_URL = "wss://socket.delta.exchange"
+WEBSOCKET_URL = "wss://socket.faida.trade"
 
 def on_error(ws, error):
     print(f"Socket Error: {error}")
@@ -274,7 +274,7 @@ import json
 import time
 
 # production websocket base url and api keys/secrets
-WEBSOCKET_URL = "wss://socket.delta.exchange"
+WEBSOCKET_URL = "wss://socket.faida.trade"
 API_KEY = 'a207900b7693435a8fa9230a38195d'
 API_SECRET = '7b6f39dcf660ec1c7c664f612c60410a2bd0c258416b498bf0311f94228f'
 
@@ -1082,7 +1082,7 @@ When markets need to come up, we conduct a single price auction. In this case, o
 ### Auction Finished
 When auction finishes, markets enter into operational mode and trading continues as usual. 
 
-You can read more about the single price auction [here](https://global.delta.exchange/blog/bootstrapping-liquidity-using-auctions/)
+You can read more about the single price auction [here](https://www.faida.trade/)
 
 
 
@@ -1522,7 +1522,7 @@ Please note that if you subscribe to v2/user_trades channel without specifying t
 ## PortfolioMargins
 Channel provides updates for portfolio margin values of the selected sub-account. These updates are sent every 2 seconds. In case portfolio margin is not enabled on the selected sub-account, no updates will be sent on this channel.
 
-For detailed description of portfolio margin please see [user guide](https://guides.delta.exchange/delta-exchange-user-guide/trading-guide/margin-explainer/portfolio-margin)
+For detailed description of portfolio margin please see [user guide](https://guides.faida.trade/trading-guide/margin-explainer/portfolio-margin)
 
 UCF: is unrealised cashflows of your portfolio. These are the cashflows (negative for outgoing and positive for incoming) that will take place if all the positions in your portfolio are closed at prevailing mark prices.
 
@@ -1614,7 +1614,7 @@ Keys -
 </dl>
 
 ## MMP Trigger
-Channel provides updates when MMP is triggered. Market maker protection is available to registered market makers by default. Others can reach out to support for getting access to MMP. More info [here](https://guides.delta.exchange/delta-exchange-user-guide/market-makers-guide/market-maker-protection).  
+Channel provides updates when MMP is triggered. Market maker protection is available to registered market makers by default. Others can reach out to support for getting access to MMP. More info [here](https://guides.faida.trade/market-makers-guide/market-maker-protection).
 
 > MMP Trigger Sample
 

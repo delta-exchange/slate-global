@@ -6,13 +6,13 @@ MMP is available on request and is manully enabled by Delta Exchange team. It is
 
 ## Usage
 1. MMP orders need to be tagged in the time_in_force field. Only MMP orders are cancelled when MMP is triggered.
-2. MMP configuration can be changed using the [Update MMP Config](https://docs.global.delta.exchange/#update-mmp-config) Api.
+2. MMP configuration can be changed using the [Update MMP Config](https://docs.faida.trade/#update-mmp-config) Api.
 
 
 ## MMP Config Parameters
 1. window_interval : This defines the window in seconds in which MMP limits are checked. The window starts after the first trade. When the interval has ended, the counters are reset.
 
-2. freeze_interval : This defines the time interval in seconds for which MMP orders are frozen once MMP gets triggered. MMP is reset once freeze interval has ended (counted from the time mmp gets triggerd). You can set this to 0 if you want to do a [Manual reset](https://docs.global.delta.exchange/#reset-mmp) instead of automatic reset.
+2. freeze_interval : This defines the time interval in seconds for which MMP orders are frozen once MMP gets triggered. MMP is reset once freeze interval has ended (counted from the time mmp gets triggerd). You can set this to 0 if you want to do a [Manual reset](https://docs.faida.trade/#reset-mmp) instead of automatic reset.
 
 3. trade_limit: Trade limit in terms of the underlying (like 10 btc) for which mmp is triggered. Trade limit is direction agnostic. Buy and sell orders are added and dont offset each other.
 

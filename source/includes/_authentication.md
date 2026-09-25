@@ -50,8 +50,8 @@ signature = generate_signature(api_secret, signature_data)
 
 **1. Verify the Correct Environment**
 
-- API keys created at [Faida](https://www.faida.trade) account must be used only with production apis.(prod api - [https://api.delta.exchange](https://api.delta.exchange))
-- API keys created at [Demo](https://demo.faida.trade) account must be used only with testnet apis.(testnet api - [https://testnet-api.delta.exchange](https://testnet-api.delta.exchange)) 
+- API keys created at [Faida](https://www.faida.trade) account must be used only with production apis.(prod api - [https://api.faida.trade](https://api.faida.trade))
+- API keys created at [Demo](https://demo.faida.trade) account must be used only with testnet apis.(testnet api - [https://testnet-api.faida.trade](https://testnet-api.faida.trade))
 
 **2. Check API Key Validity**
 
@@ -154,7 +154,7 @@ By following these troubleshooting steps, you can resolve common Faida Trade API
 Before being able to sign any requests, you must create an API key via the Faida Trade website. Upon creating a key you will receive api key and api secret, which you must remember and secure at your end. The Key and Secret will be randomly generated.
 
 You can create a new API key from here :
-[https://global.delta.exchange/app/account/manageapikeys](https://global.delta.exchange/app/account/manageapikeys)
+[https://www.faida.trade/app/login](https://www.faida.trade/app/login)
 
 To create an API key with Trading permissions, whitelisted IP(s) must be provided. API requests using this API key will only succeed, if made from a machine with an IP address that was whitelisted. Multiple IPs can be whitelisted for a single API key. IP values can take IPv4 and IPv6. Whitelisted IPs can be changed and updated from the same page.
 
@@ -224,7 +224,7 @@ def generate_signature(secret, message):
     hash = hmac.new(secret, message, hashlib.sha256)
     return hash.hexdigest()
 
-url = "https://api.delta.exchange/v2/orders"
+url = "https://api.faida.trade/v2/orders"
 
 # Get open orders
 payload = ''

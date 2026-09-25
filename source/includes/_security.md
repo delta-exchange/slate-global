@@ -3,7 +3,7 @@ We take the security, integrity, availability of our services, and the privacy o
 
 
 ## Targets In scope
-- https://*.delta.exchange
+- https://*.faida.trade
 
 Any domain/property of Faida Trade Network not listed in the targets section is out of scope. This includes any/all subdomains not listed above.
 
@@ -44,7 +44,7 @@ There are some things we explicitly ask you not to do
 - Interacting with real customers or real customer accounts is forbidden.
 
 ## Rules of reporting
-We take our Internal process and workflow seriously, We have a dedicated security team working and testing round the clock, so we would like you to send your reports to only security@delta.exchange and follow below said rules or not following will void you from our bug bounty benefits, Also we would like you to encrypt emails sent to us with a PGP key provided below if the Vulnerability is Severe or Critical.
+We take our Internal process and workflow seriously, We have a dedicated security team working and testing round the clock, so we would like you to send your reports to only security@faida.trade and follow below said rules or not following will void you from our bug bounty benefits, Also we would like you to encrypt emails sent to us with a PGP key provided below if the Vulnerability is Severe or Critical.
 
 - We recommend you to use emails which contain test as a keyword in the email address for example *test*@gmail.com.
 - For testing and reporting so that we can identify your activity on our environments, also whitelist for IDS/FDS blocks)
@@ -54,7 +54,7 @@ We take our Internal process and workflow seriously, We have a dedicated securit
 - Do not send us external-links/executable/scripts in report if possible attach a text file or pdf. Without zipp'ing or rar'ing it.
 - Screenshots are accepted if only in PNG and JIF formats for internal security reasons.
 - POC Videos are accepted if only in MP4,AVI, WEBM, MOV formats for internal security reasons.
-- Any or All reports must only reach security@delta.exchange.
+- Any or All reports must only reach security@faida.trade.
 
 
 ## Recommended Reporting format
@@ -68,7 +68,7 @@ Help us get an idea of what this vulnerability is about.
 
 Select the vulnerable target Domain name / Subdomain name
 
-(eg. "so and so on https://example.delta.exchange")
+(eg. "so and so on https://example.faida.trade")
 
 <b>Vulnerability details</b>
 
