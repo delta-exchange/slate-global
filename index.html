@@ -715,11 +715,6 @@
           </li>
           <li>
             <a href="#rest-clients" class="toc-h1 toc-link" data-title="Rest Clients">Rest Clients</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#ccxt" class="toc-h2 toc-link" data-title="CCXT">CCXT</a>
-                  </li>
-              </ul>
           </li>
           <li>
             <a href="#websocket-feed" class="toc-h1 toc-link" data-title="Websocket Feed">Websocket Feed</a>
@@ -828,32 +823,6 @@
               </ul>
           </li>
           <li>
-            <a href="#changelog" class="toc-h1 toc-link" data-title="Changelog">Changelog</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#17-04-26" class="toc-h2 toc-link" data-title="17.04.26">17.04.26</a>
-                  </li>
-                  <li>
-                    <a href="#21-03-25" class="toc-h2 toc-link" data-title="21.03.25">21.03.25</a>
-                  </li>
-                  <li>
-                    <a href="#20-02-25" class="toc-h2 toc-link" data-title="20.02.25">20.02.25</a>
-                  </li>
-                  <li>
-                    <a href="#18-10-2024" class="toc-h2 toc-link" data-title="18.10.2024">18.10.2024</a>
-                  </li>
-                  <li>
-                    <a href="#01-05-2024" class="toc-h2 toc-link" data-title="01.05.2024">01.05.2024</a>
-                  </li>
-                  <li>
-                    <a href="#v2-rest-api" class="toc-h2 toc-link" data-title="V2 Rest Api">V2 Rest Api</a>
-                  </li>
-                  <li>
-                    <a href="#new-socket-channels" class="toc-h2 toc-link" data-title="New Socket Channels">New Socket Channels</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#security" class="toc-h1 toc-link" data-title="Security">Security</a>
               <ul class="toc-list-h2">
                   <li>
@@ -947,7 +916,7 @@ e.g</p>
 
 <p>e.g. BTCUSDT, ETHUSDT, LEOUSDQ</p>
 
-<p><strong>Mark Price:</strong> Each contract has a unique <a href="https://global.delta.exchange/user-guide/">Mark Price</a>  which can be referred to by: <strong>MARK: Contract_Symbol (MARK:BTCUSDT)</strong> </p>
+<p><strong>Mark Price:</strong> Each contract has a unique <a href="https://guides.faida.trade/">Mark Price</a> which can be referred to by: <strong>MARK: Contract_Symbol (MARK:BTCUSDT)</strong></p>
 
 <p><strong>Index Price:</strong> The prices of the underlying assets for the contracts listed on Faida Trade are obtained from various spot exchanges, and are computed by averaging prices from multiple exchanges. Details of all the indices are available on this <a href="https://www.faida.trade/indices/">page</a>.</p>
 
@@ -1019,9 +988,9 @@ It is important to note that the BTCUSDT Index price doesn&#39;t follow this con
 </span></code></pre>
 <p><strong>Example</strong></p>
 
-<p>https://api.delta.exchange/v2/products?page_size=30</p>
+<p>https://api.faida.trade/v2/products?page_size=30</p>
 
-<p>https://api.delta.exchange/v2/products?page_size=30&amp;after=after_cursor_from_last_request</p>
+<p>https://api.faida.trade/v2/products?page_size=30&amp;after=after_cursor_from_last_request</p>
 <h2 id='data-centers'>Data Centers</h2>
 <p>Faida Trade data centers are in <strong>AWS Tokyo</strong></p>
 
@@ -1077,8 +1046,8 @@ signature = generate_signature(api_secret, signature_data)
 <p><strong>1. Verify the Correct Environment</strong></p>
 
 <ul>
-<li>API keys created at <a href="https://www.faida.trade">Faida</a> account must be used only with production apis.(prod api - <a href="https://api.delta.exchange">https://api.delta.exchange</a>)</li>
-<li>API keys created at <a href="https://demo.faida.trade">Demo</a> account must be used only with testnet apis.(testnet api - <a href="https://testnet-api.delta.exchange">https://testnet-api.delta.exchange</a>) </li>
+<li>API keys created at <a href="https://www.faida.trade">Faida</a> account must be used only with production apis.(prod api - <a href="https://api.faida.trade">https://api.faida.trade</a>)</li>
+<li>API keys created at <a href="https://demo.faida.trade">Demo</a> account must be used only with testnet apis.(testnet api - <a href="https://testnet-api.faida.trade">https://testnet-api.faida.trade</a>)</li>
 </ul>
 
 <p><strong>2. Check API Key Validity</strong></p>
@@ -1191,7 +1160,7 @@ signature = generate_signature(api_secret, signature_data)
 <p>Before being able to sign any requests, you must create an API key via the Faida Trade website. Upon creating a key you will receive api key and api secret, which you must remember and secure at your end. The Key and Secret will be randomly generated.</p>
 
 <p>You can create a new API key from here :
-<a href="https://global.delta.exchange/app/account/manageapikeys">https://global.delta.exchange/app/account/manageapikeys</a></p>
+<a href="https://www.faida.trade/app/login">https://www.faida.trade/app/login</a></p>
 
 <p>To create an API key with Trading permissions, whitelisted IP(s) must be provided. API requests using this API key will only succeed, if made from a machine with an IP address that was whitelisted. Multiple IPs can be whitelisted for a single API key. IP values can take IPv4 and IPv6. Whitelisted IPs can be changed and updated from the same page.</p>
 
@@ -1259,7 +1228,7 @@ signature = generate_signature(api_secret, signature_data)
     <span class="nb">hash</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">hash</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.delta.exchange/v2/orders"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.faida.trade/v2/orders"</span>
 
 <span class="c"># Get open orders</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="s">''</span>
@@ -1358,7 +1327,7 @@ Total quota used: 300 + 150 + 1000 + 500 = 1950 quota used. If this is greater t
 <p>Even if you have not exceeded the rate limit on the REST API level, your requests may still fail with a 429 error if you breach the product-level rate limit.</p>
 <h2 id='increasing-your-rate-limits'>Increasing your rate limits</h2>
 
-<p>If you are running up against our limits and believe that you have a legitimate need, please email us at <a href="mailto:support@delta.exchange">support@delta.exchange</a> to discuss increasing your rate limits.</p>
+<p>If you are running up against our limits and believe that you have a legitimate need, please email us at <a href="mailto:support@faida.trade">support@faida.trade</a> to discuss increasing your rate limits.</p>
 
 <h1 id='types'>Types</h1><h2 id='timestamps'>Timestamps</h2>
 <p>Unless otherwise specified, all timestamps from API are returned in  <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>  with microseconds. Make sure you can parse the following ISO 8601 format. Most modern languages and libraries will handle this without issues.</p>
@@ -1432,8 +1401,8 @@ headingLevel: 2</p>
 <p>REST API Endpoint URL for <a href="https://www.faida.trade/">Faida Trade</a></p>
 
 <ul>
-<li><strong>Production</strong> - https://api.delta.exchange</li>
-<li><strong>Testnet(Demo Account)</strong> - https://testnet-api.delta.exchange</li>
+<li><strong>Production</strong> - https://api.faida.trade</li>
+<li><strong>Testnet(Demo Account)</strong> - https://testnet-api.faida.trade</li>
 </ul>
 
 <h1 id="faida-trade-api-v2-assets">Assets</h1>
@@ -1453,14 +1422,14 @@ headingLevel: 2</p>
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/assets'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/assets'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/assets <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/assets <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
 
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
@@ -1470,7 +1439,7 @@ curl -X GET https://api.delta.exchange/v2/assets <span class="se">\</span>
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/assets'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/assets'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -1569,14 +1538,14 @@ This operation does not require authentication.
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/indices'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/indices'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/indices <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/indices <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
 
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
@@ -1586,7 +1555,7 @@ curl -X GET https://api.delta.exchange/v2/indices <span class="se">\</span>
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/indices'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/indices'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -1688,14 +1657,14 @@ This operation does not require authentication.
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/products'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/products'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/products <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/products <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
 
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
@@ -1705,7 +1674,7 @@ curl -X GET https://api.delta.exchange/v2/products <span class="se">\</span>
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/products'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/products'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -1964,14 +1933,14 @@ This operation does not require authentication.
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/products/{symbol}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/products/{symbol}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/products/<span class="o">{</span>symbol<span class="o">}</span> <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/products/<span class="o">{</span>symbol<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
 
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
@@ -1981,7 +1950,7 @@ curl -X GET https://api.delta.exchange/v2/products/<span class="o">{</span>symbo
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/products/{symbol}'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/products/{symbol}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -2210,14 +2179,14 @@ This operation does not require authentication.
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/tickers'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/tickers'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/tickers <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/tickers <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
 
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
@@ -2227,7 +2196,7 @@ curl -X GET https://api.delta.exchange/v2/tickers <span class="se">\</span>
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/tickers'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/tickers'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -2366,14 +2335,14 @@ This operation does not require authentication.
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/tickers/{symbol}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/tickers/{symbol}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/tickers/<span class="o">{</span>symbol<span class="o">}</span> <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/tickers/<span class="o">{</span>symbol<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
 
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
@@ -2383,7 +2352,7 @@ curl -X GET https://api.delta.exchange/v2/tickers/<span class="o">{</span>symbol
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/tickers/{symbol}'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/tickers/{symbol}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -2506,14 +2475,14 @@ This operation does not require authentication.
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/tickers?contract_types=call_options,put_options&amp;underlying_asset_symbols={underlying_asset_symbols}&amp;expiry_date={expiry_date}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/tickers?contract_types=call_options,put_options&amp;underlying_asset_symbols={underlying_asset_symbols}&amp;expiry_date={expiry_date}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/tickers?contract_types<span class="o">=</span>call_options,put_options&amp;underlying_asset_symbols<span class="o">={</span>underlying_asset_symbols<span class="o">}</span>&amp;expiry_date<span class="o">={</span>expiry_date<span class="o">}</span> <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/tickers?contract_types<span class="o">=</span>call_options,put_options&amp;underlying_asset_symbols<span class="o">={</span>underlying_asset_symbols<span class="o">}</span>&amp;expiry_date<span class="o">={</span>expiry_date<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
 
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
@@ -2523,7 +2492,7 @@ curl -X GET https://api.delta.exchange/v2/tickers?contract_types<span class="o">
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/tickers?contract_types=call_options,put_options&amp;underlying_asset_symbols={underlying_asset_symbols}&amp;expiry_date={expiry_date}'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/tickers?contract_types=call_options,put_options&amp;underlying_asset_symbols={underlying_asset_symbols}&amp;expiry_date={expiry_date}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -2674,14 +2643,14 @@ This operation does not require authentication.
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X POST https://api.delta.exchange/v2/orders <span class="se">\</span>
+curl -X POST https://api.faida.trade/v2/orders <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -2699,7 +2668,7 @@ curl -X POST https://api.delta.exchange/v2/orders <span class="se">\</span>
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.delta.exchange/v2/orders'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.faida.trade/v2/orders'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -2890,14 +2859,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X DELETE https://api.delta.exchange/v2/orders <span class="se">\</span>
+curl -X DELETE https://api.faida.trade/v2/orders <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -2915,7 +2884,7 @@ curl -X DELETE https://api.delta.exchange/v2/orders <span class="se">\</span>
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span> <span class="s1">'https://api.delta.exchange/v2/orders'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span> <span class="s1">'https://api.faida.trade/v2/orders'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -3087,14 +3056,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X PUT https://api.delta.exchange/v2/orders <span class="se">\</span>
+curl -X PUT https://api.faida.trade/v2/orders <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -3112,7 +3081,7 @@ curl -X PUT https://api.delta.exchange/v2/orders <span class="se">\</span>
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.delta.exchange/v2/orders'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.faida.trade/v2/orders'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -3290,14 +3259,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/orders <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/orders <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
@@ -3313,7 +3282,7 @@ curl -X GET https://api.delta.exchange/v2/orders <span class="se">\</span>
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/orders'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/orders'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -3576,14 +3545,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders/bracket'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders/bracket'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X POST https://api.delta.exchange/v2/orders/bracket <span class="se">\</span>
+curl -X POST https://api.faida.trade/v2/orders/bracket <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -3601,7 +3570,7 @@ curl -X POST https://api.delta.exchange/v2/orders/bracket <span class="se">\</sp
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.delta.exchange/v2/orders/bracket'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.faida.trade/v2/orders/bracket'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -3711,14 +3680,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders/bracket'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders/bracket'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X PUT https://api.delta.exchange/v2/orders/bracket <span class="se">\</span>
+curl -X PUT https://api.faida.trade/v2/orders/bracket <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -3736,7 +3705,7 @@ curl -X PUT https://api.delta.exchange/v2/orders/bracket <span class="se">\</spa
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.delta.exchange/v2/orders/bracket'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.faida.trade/v2/orders/bracket'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -3841,14 +3810,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders/all'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders/all'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X DELETE https://api.delta.exchange/v2/orders/all <span class="se">\</span>
+curl -X DELETE https://api.faida.trade/v2/orders/all <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -3866,7 +3835,7 @@ curl -X DELETE https://api.delta.exchange/v2/orders/all <span class="se">\</span
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span> <span class="s1">'https://api.delta.exchange/v2/orders/all'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span> <span class="s1">'https://api.faida.trade/v2/orders/all'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -3967,14 +3936,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders/batch'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders/batch'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X POST https://api.delta.exchange/v2/orders/batch <span class="se">\</span>
+curl -X POST https://api.faida.trade/v2/orders/batch <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -3992,7 +3961,7 @@ curl -X POST https://api.delta.exchange/v2/orders/batch <span class="se">\</span
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.delta.exchange/v2/orders/batch'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.faida.trade/v2/orders/batch'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -4179,14 +4148,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders/batch'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders/batch'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X PUT https://api.delta.exchange/v2/orders/batch <span class="se">\</span>
+curl -X PUT https://api.faida.trade/v2/orders/batch <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -4204,7 +4173,7 @@ curl -X PUT https://api.delta.exchange/v2/orders/batch <span class="se">\</span>
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.delta.exchange/v2/orders/batch'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.faida.trade/v2/orders/batch'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -4388,14 +4357,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders/batch'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders/batch'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X DELETE https://api.delta.exchange/v2/orders/batch <span class="se">\</span>
+curl -X DELETE https://api.faida.trade/v2/orders/batch <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -4413,7 +4382,7 @@ curl -X DELETE https://api.delta.exchange/v2/orders/batch <span class="se">\</sp
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span> <span class="s1">'https://api.delta.exchange/v2/orders/batch'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span> <span class="s1">'https://api.faida.trade/v2/orders/batch'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -4591,14 +4560,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders/{order_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders/{order_id}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/orders/<span class="o">{</span>order_id<span class="o">}</span> <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/orders/<span class="o">{</span>order_id<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
@@ -4614,7 +4583,7 @@ curl -X GET https://api.delta.exchange/v2/orders/<span class="o">{</span>order_i
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/orders/{order_id}'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/orders/{order_id}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -4768,14 +4737,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders/client_order_id/{client_oid}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders/client_order_id/{client_oid}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/orders/client_order_id/<span class="o">{</span>client_oid<span class="o">}</span> <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/orders/client_order_id/<span class="o">{</span>client_oid<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
@@ -4791,7 +4760,7 @@ curl -X GET https://api.delta.exchange/v2/orders/client_order_id/<span class="o"
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/orders/client_order_id/{client_oid}'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/orders/client_order_id/{client_oid}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -4946,14 +4915,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/products/{product_id}/orders/leverage'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/products/{product_id}/orders/leverage'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X POST https://api.delta.exchange/v2/products/<span class="o">{</span>product_id<span class="o">}</span>/orders/leverage <span class="se">\</span>
+curl -X POST https://api.faida.trade/v2/products/<span class="o">{</span>product_id<span class="o">}</span>/orders/leverage <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -4971,7 +4940,7 @@ curl -X POST https://api.delta.exchange/v2/products/<span class="o">{</span>prod
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.delta.exchange/v2/products/{product_id}/orders/leverage'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.faida.trade/v2/products/{product_id}/orders/leverage'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -5093,14 +5062,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/products/{product_id}/orders/leverage'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/products/{product_id}/orders/leverage'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/products/<span class="o">{</span>product_id<span class="o">}</span>/orders/leverage <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/products/<span class="o">{</span>product_id<span class="o">}</span>/orders/leverage <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
@@ -5116,7 +5085,7 @@ curl -X GET https://api.delta.exchange/v2/products/<span class="o">{</span>produ
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/products/{product_id}/orders/leverage'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/products/{product_id}/orders/leverage'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -5206,14 +5175,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/positions/margined'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/positions/margined'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/positions/margined <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/positions/margined <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
@@ -5229,7 +5198,7 @@ curl -X GET https://api.delta.exchange/v2/positions/margined <span class="se">\<
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/positions/margined'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/positions/margined'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -5361,14 +5330,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/positions'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/positions'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/positions <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/positions <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
@@ -5384,7 +5353,7 @@ curl -X GET https://api.delta.exchange/v2/positions <span class="se">\</span>
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/positions'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/positions'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -5479,14 +5448,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/positions/auto_topup'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/positions/auto_topup'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X PUT https://api.delta.exchange/v2/positions/auto_topup <span class="se">\</span>
+curl -X PUT https://api.faida.trade/v2/positions/auto_topup <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -5504,7 +5473,7 @@ curl -X PUT https://api.delta.exchange/v2/positions/auto_topup <span class="se">
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.delta.exchange/v2/positions/auto_topup'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.faida.trade/v2/positions/auto_topup'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -5632,14 +5601,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/positions/change_margin'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/positions/change_margin'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X POST https://api.delta.exchange/v2/positions/change_margin <span class="se">\</span>
+curl -X POST https://api.faida.trade/v2/positions/change_margin <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -5657,7 +5626,7 @@ curl -X POST https://api.delta.exchange/v2/positions/change_margin <span class="
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.delta.exchange/v2/positions/change_margin'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.faida.trade/v2/positions/change_margin'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -5783,14 +5752,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/positions/close_all'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/positions/close_all'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X POST https://api.delta.exchange/v2/positions/close_all <span class="se">\</span>
+curl -X POST https://api.faida.trade/v2/positions/close_all <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -5808,7 +5777,7 @@ curl -X POST https://api.delta.exchange/v2/positions/close_all <span class="se">
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.delta.exchange/v2/positions/close_all'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.faida.trade/v2/positions/close_all'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -5929,14 +5898,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders/history'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders/history'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/orders/history <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/orders/history <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
@@ -5952,7 +5921,7 @@ curl -X GET https://api.delta.exchange/v2/orders/history <span class="se">\</spa
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/orders/history'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/orders/history'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -6191,14 +6160,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/fills'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/fills'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/fills <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/fills <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
@@ -6214,7 +6183,7 @@ curl -X GET https://api.delta.exchange/v2/fills <span class="se">\</span>
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/fills'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/fills'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -6418,14 +6387,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/fills/history/download/csv'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/fills/history/download/csv'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/fills/history/download/csv <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/fills/history/download/csv <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
   -H <span class="s1">'timestamp: ****'</span>
@@ -6439,7 +6408,7 @@ curl -X GET https://api.delta.exchange/v2/fills/history/download/csv <span class
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/fills/history/download/csv'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/fills/history/download/csv'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -6529,14 +6498,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/l2orderbook/{symbol}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/l2orderbook/{symbol}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/l2orderbook/<span class="o">{</span>symbol<span class="o">}</span> <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/l2orderbook/<span class="o">{</span>symbol<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
 
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
@@ -6546,7 +6515,7 @@ curl -X GET https://api.delta.exchange/v2/l2orderbook/<span class="o">{</span>sy
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/l2orderbook/{symbol}'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/l2orderbook/{symbol}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -6653,14 +6622,14 @@ This operation does not require authentication.
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/trades/{symbol}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/trades/{symbol}'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/trades/<span class="o">{</span>symbol<span class="o">}</span> <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/trades/<span class="o">{</span>symbol<span class="o">}</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
 
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
@@ -6670,7 +6639,7 @@ curl -X GET https://api.delta.exchange/v2/trades/<span class="o">{</span>symbol<
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/trades/{symbol}'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/trades/{symbol}'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -6783,14 +6752,14 @@ This operation does not require authentication.
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/wallet/balances'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/wallet/balances'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/wallet/balances <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/wallet/balances <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
@@ -6806,7 +6775,7 @@ curl -X GET https://api.delta.exchange/v2/wallet/balances <span class="se">\</sp
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/wallet/balances'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/wallet/balances'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -6895,14 +6864,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/wallet/transactions'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/wallet/transactions'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/wallet/transactions <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/wallet/transactions <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
@@ -6918,7 +6887,7 @@ curl -X GET https://api.delta.exchange/v2/wallet/transactions <span class="se">\
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/wallet/transactions'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/wallet/transactions'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -7203,14 +7172,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/wallet/transactions/download'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/wallet/transactions/download'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/wallet/transactions/download <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/wallet/transactions/download <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
   -H <span class="s1">'timestamp: ****'</span>
@@ -7224,7 +7193,7 @@ curl -X GET https://api.delta.exchange/v2/wallet/transactions/download <span cla
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/wallet/transactions/download'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/wallet/transactions/download'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -7328,14 +7297,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/wallets/sub_account_balance_transfer'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/wallets/sub_account_balance_transfer'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X POST https://api.delta.exchange/v2/wallets/sub_account_balance_transfer <span class="se">\</span>
+curl -X POST https://api.faida.trade/v2/wallets/sub_account_balance_transfer <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -7353,7 +7322,7 @@ curl -X POST https://api.delta.exchange/v2/wallets/sub_account_balance_transfer 
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.delta.exchange/v2/wallets/sub_account_balance_transfer'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.faida.trade/v2/wallets/sub_account_balance_transfer'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -7456,14 +7425,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/wallets/sub_accounts_transfer_history'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/wallets/sub_accounts_transfer_history'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/wallets/sub_accounts_transfer_history <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/wallets/sub_accounts_transfer_history <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -7481,7 +7450,7 @@ curl -X GET https://api.delta.exchange/v2/wallets/sub_accounts_transfer_history 
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/wallets/sub_accounts_transfer_history'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/wallets/sub_accounts_transfer_history'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -7598,14 +7567,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/stats'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/stats'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/stats <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/stats <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
 
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
@@ -7615,7 +7584,7 @@ curl -X GET https://api.delta.exchange/v2/stats <span class="se">\</span>
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/stats'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/stats'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -7686,14 +7655,14 @@ This operation does not require authentication.
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/users/update_mmp'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/users/update_mmp'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X PUT https://api.delta.exchange/v2/users/update_mmp <span class="se">\</span>
+curl -X PUT https://api.faida.trade/v2/users/update_mmp <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -7711,7 +7680,7 @@ curl -X PUT https://api.delta.exchange/v2/users/update_mmp <span class="se">\</s
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.delta.exchange/v2/users/update_mmp'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.faida.trade/v2/users/update_mmp'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -7721,7 +7690,7 @@ curl -X PUT https://api.delta.exchange/v2/users/update_mmp <span class="se">\</s
 
 <p><code>PUT /users/update_mmp</code></p>
 
-<p>Channel provides updates when MMP is triggered. Market maker protection is available to registered market makers by default. Others can reach out to support for getting access to MMP. More info <a href="https://guides.delta.exchange/delta-exchange-user-guide/market-makers-guide/market-maker-protection">here</a>.</p>
+<p>Channel provides updates when MMP is triggered. Market maker protection is available to registered market makers by default. Others can reach out to support for getting access to MMP. More info <a href="https://guides.faida.trade/market-makers-guide/market-maker-protection">here</a>.</p>
 
 <blockquote>
 <p>Body parameter</p>
@@ -7850,14 +7819,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/users/reset_mmp'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/users/reset_mmp'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X PUT https://api.delta.exchange/v2/users/reset_mmp <span class="se">\</span>
+curl -X PUT https://api.faida.trade/v2/users/reset_mmp <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -7875,7 +7844,7 @@ curl -X PUT https://api.delta.exchange/v2/users/reset_mmp <span class="se">\</sp
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.delta.exchange/v2/users/reset_mmp'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.faida.trade/v2/users/reset_mmp'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -7975,14 +7944,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/orders/cancel_after'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/orders/cancel_after'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X POST https://api.delta.exchange/v2/orders/cancel_after <span class="se">\</span>
+curl -X POST https://api.faida.trade/v2/orders/cancel_after <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -8000,7 +7969,7 @@ curl -X POST https://api.delta.exchange/v2/orders/cancel_after <span class="se">
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.delta.exchange/v2/orders/cancel_after'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://api.faida.trade/v2/orders/cancel_after'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -8122,14 +8091,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/users/trading_preferences'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/users/trading_preferences'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/users/trading_preferences <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/users/trading_preferences <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
@@ -8145,7 +8114,7 @@ curl -X GET https://api.delta.exchange/v2/users/trading_preferences <span class=
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/users/trading_preferences'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/users/trading_preferences'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -8241,14 +8210,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/users/trading_preferences'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/users/trading_preferences'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X PUT https://api.delta.exchange/v2/users/trading_preferences <span class="se">\</span>
+curl -X PUT https://api.faida.trade/v2/users/trading_preferences <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -8266,7 +8235,7 @@ curl -X PUT https://api.delta.exchange/v2/users/trading_preferences <span class=
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.delta.exchange/v2/users/trading_preferences'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.faida.trade/v2/users/trading_preferences'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -8408,14 +8377,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/sub_accounts'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/sub_accounts'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/sub_accounts <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/sub_accounts <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
@@ -8431,7 +8400,7 @@ curl -X GET https://api.delta.exchange/v2/sub_accounts <span class="se">\</span>
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/sub_accounts'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/sub_accounts'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -8510,14 +8479,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/profile'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/profile'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/profile <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/profile <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
   -H <span class="s1">'signature: ****'</span> <span class="se">\</span>
@@ -8533,7 +8502,7 @@ curl -X GET https://api.delta.exchange/v2/profile <span class="se">\</span>
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/profile'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/profile'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -8611,14 +8580,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'timestamp'</span><span class="p">:</span> <span class="s">'****'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/users/margin_mode'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/users/margin_mode'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X PUT https://api.delta.exchange/v2/users/margin_mode <span class="se">\</span>
+curl -X PUT https://api.faida.trade/v2/users/margin_mode <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'api-key: ****'</span> <span class="se">\</span>
@@ -8636,7 +8605,7 @@ curl -X PUT https://api.delta.exchange/v2/users/margin_mode <span class="se">\</
   <span class="s1">'timestamp'</span> <span class="o">=&gt;</span> <span class="s1">'****'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.delta.exchange/v2/users/margin_mode'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span> <span class="s1">'https://api.faida.trade/v2/users/margin_mode'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -8736,14 +8705,14 @@ To perform this operation, you must be sign the request using your api key and s
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/products/?states=expired'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/products/?states=expired'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
 
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/products/?states<span class="o">=</span>expired <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/products/?states<span class="o">=</span>expired <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
 
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
@@ -8753,7 +8722,7 @@ curl -X GET https://api.delta.exchange/v2/products/?states<span class="o">=</spa
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/products/?states=expired'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/products/?states=expired'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -8779,7 +8748,7 @@ curl -X GET https://api.delta.exchange/v2/products/?states<span class="o">=</spa
 <td>query</td>
 <td>string</td>
 <td>false</td>
-<td>Comma separated list of states e.g. to get expired contracts https://api.delta.exchange/v2/products?contract_types=call_options&amp;states=expired</td>
+<td>Comma separated list of states e.g. to get expired contracts https://api.faida.trade/v2/products?contract_types=call_options&amp;states=expired</td>
 </tr>
 <tr>
 <td>page_size</td>
@@ -8989,14 +8958,14 @@ This operation does not require authentication.
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/history/candles'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/history/candles'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
   <span class="s">'resolution'</span><span class="p">:</span> <span class="s">'5m'</span><span class="p">,</span>  <span class="s">'symbol'</span><span class="p">:</span> <span class="s">'BTCUSDT'</span><span class="p">,</span>  <span class="s">'start'</span><span class="p">:</span> <span class="s">'1685618835'</span><span class="p">,</span>  <span class="s">'end'</span><span class="p">:</span> <span class="s">'1722511635'</span>
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/history/candles?resolution<span class="o">=</span>5m&amp;symbol<span class="o">=</span>BTCUSDT&amp;start<span class="o">=</span>1685618835&amp;end<span class="o">=</span>1722511635 <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/history/candles?resolution<span class="o">=</span>5m&amp;symbol<span class="o">=</span>BTCUSDT&amp;start<span class="o">=</span>1685618835&amp;end<span class="o">=</span>1722511635 <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
 
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
@@ -9006,7 +8975,7 @@ curl -X GET https://api.delta.exchange/v2/history/candles?resolution<span class=
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/history/candles'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/history/candles'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="s1">'resolution'</span> <span class="o">=&gt;</span> <span class="s1">'5m'</span><span class="p">,</span>
 <span class="s1">'symbol'</span> <span class="o">=&gt;</span> <span class="s1">'BTCUSDT'</span><span class="p">,</span>
@@ -9187,14 +9156,14 @@ This operation does not require authentication.
   <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.delta.exchange/v2/history/sparklines'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.faida.trade/v2/history/sparklines'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
   <span class="s">'symbols'</span><span class="p">:</span> <span class="s">'ETHUSD,MARK:BTCUSD'</span>
 <span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 </code></pre><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl -X GET https://api.delta.exchange/v2/history/sparklines?symbols<span class="o">=</span>ETHUSD%2CMARK%3ABTCUSD <span class="se">\</span>
+curl -X GET https://api.faida.trade/v2/history/sparklines?symbols<span class="o">=</span>ETHUSD%2CMARK%3ABTCUSD <span class="se">\</span>
   -H <span class="s1">'Accept: application/json'</span>
 
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
@@ -9204,7 +9173,7 @@ curl -X GET https://api.delta.exchange/v2/history/sparklines?symbols<span class=
   <span class="s1">'Accept'</span> <span class="o">=&gt;</span> <span class="s1">'application/json'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.delta.exchange/v2/history/sparklines'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'https://api.faida.trade/v2/history/sparklines'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="s1">'symbols'</span> <span class="o">=&gt;</span> <span class="s1">'ETHUSD,MARK:BTCUSD'</span>
 <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
@@ -15421,7 +15390,7 @@ This operation does not require authentication.
 
 <p>Faida Trade API conforms to the Swagger spec for REST endpoints. Any Swagger-compatible client can connect to the Faida Trade API and execute commands.</p>
 
-<p>You can find the swagger spec json for Faida Trade Api <a href="https://docs.global.delta.exchange/api/swagger_v2.json">here</a></p>
+<p>You can find the swagger spec json for Faida Trade Api <a href="https://docs.faida.trade/api/swagger_v2.json">here</a></p>
 
 <p>We also have Rest Api Clients available for the following languages</p>
 
@@ -15430,12 +15399,6 @@ This operation does not require authentication.
 <li><a href="https://pypi.org/project/delta-rest-client">Python</a></li>
 </ul>
 
-<h2 id='ccxt'>CCXT</h2>
-
-<p>CCXT is our authorized SDK provider and you may access our API through CCXT. </p>
-
-<p>For more information, please visit <a href="https://ccxt.trade">ccxt website</a>.</p>
-
 <h1 id='websocket-feed'>Websocket Feed</h1>
 
 <p>Websocket api can be used for the following use cases</p>
@@ -15443,18 +15406,18 @@ This operation does not require authentication.
 <ul>
 <li>Get real time feed of market data, this includes L2 orderbook and recent trades.</li>
 <li>Get price feeds - Mark prices of different contracts, price feed of underlying indexes etc.</li>
-<li>Get account specific notifications like fills, liquidations, <a href="https://global.delta.exchange/user-guide/docs/trading-guide/ADL/">ADL</a> and PnL updates.</li>
+<li>Get account specific notifications like fills, liquidations, <a href="https://guides.faida.trade/">ADL</a> and PnL updates.</li>
 <li>Get account specific updates on orders, positions and wallets.</li>
 </ul>
 
 <p>Access url for <a href="https://www.faida.trade">Faida Trade</a></p>
 
 <ul>
-<li><strong>Production private channel endpoint</strong> - wss://socket.delta.exchange</li>
-<li><strong>Production public channel endpoint</strong> - wss://public-socket.india.delta.exchange</li>
+<li><strong>Production private channel endpoint</strong> - wss://socket.faida.trade</li>
+<li><strong>Production public channel endpoint</strong> - wss://public-socket.faida.trade</li>
 <br>
-<li><strong>Testnet(Demo Account) private channel endpoint</strong> - wss://testnet-socket.delta.exchange</li>
-<li><strong>Testnet(Demo Account) public channel endpoint</strong> - wss://socket-ind-pub.testnet.deltaex.org</li>
+<li><strong>Testnet(Demo Account) private channel endpoint</strong> - wss://testnet-socket.faida.trade</li>
+<li><strong>Testnet(Demo Account) public channel endpoint</strong> - wss://testnet-socket-pub.faida.trade</li>
 </ul>
 
 <p>There is a limit of 150 connections every 5 minutes per IP address. A connection attempt that goes beyond the limit will be disconnected with 429 HTTP status error. On receiving this error, wait for 5 to 10 minutes before making new connection requests.</p>
@@ -15600,7 +15563,7 @@ This operation does not require authentication.
 <span class="n">signature_data</span> <span class="o">=</span> <span class="n">method</span> <span class="o">+</span> <span class="n">timestamp</span> <span class="o">+</span> <span class="n">path</span>
 <span class="n">signature</span> <span class="o">=</span> <span class="n">generate_signature</span><span class="p">(</span><span class="n">api_secret</span><span class="p">,</span> <span class="n">signature_data</span><span class="p">)</span>
 
-<span class="n">ws</span> <span class="o">=</span> <span class="n">websocket</span><span class="o">.</span><span class="n">WebSocketApp</span><span class="p">(</span><span class="s">'wss://socket.delta.exchange'</span><span class="p">)</span>
+<span class="n">ws</span> <span class="o">=</span> <span class="n">websocket</span><span class="o">.</span><span class="n">WebSocketApp</span><span class="p">(</span><span class="s">'wss://socket.faida.trade'</span><span class="p">)</span>
 <span class="n">ws</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
     <span class="s">"type"</span><span class="p">:</span> <span class="s">"auth"</span><span class="p">,</span>
     <span class="s">"payload"</span><span class="p">:</span> <span class="p">{</span>
@@ -15632,7 +15595,7 @@ The python script(right panel) connects to the Faida Trade WebSocket to receive 
 <span class="kn">import</span> <span class="nn">json</span>
 
 <span class="c"># production websocket base url</span>
-<span class="n">WEBSOCKET_URL</span> <span class="o">=</span> <span class="s">"wss://socket.delta.exchange"</span>
+<span class="n">WEBSOCKET_URL</span> <span class="o">=</span> <span class="s">"wss://socket.faida.trade"</span>
 
 <span class="k">def</span> <span class="nf">on_error</span><span class="p">(</span><span class="n">ws</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"Socket Error: {error}"</span><span class="p">)</span>
@@ -15690,7 +15653,7 @@ The python script(right panel) connects to the Faida Trade WebSocket to receive 
 <span class="kn">import</span> <span class="nn">time</span>
 
 <span class="c"># production websocket base url and api keys/secrets</span>
-<span class="n">WEBSOCKET_URL</span> <span class="o">=</span> <span class="s">"wss://socket.delta.exchange"</span>
+<span class="n">WEBSOCKET_URL</span> <span class="o">=</span> <span class="s">"wss://socket.faida.trade"</span>
 <span class="n">API_KEY</span> <span class="o">=</span> <span class="s">'a207900b7693435a8fa9230a38195d'</span>
 <span class="n">API_SECRET</span> <span class="o">=</span> <span class="s">'7b6f39dcf660ec1c7c664f612c60410a2bd0c258416b498bf0311f94228f'</span>
 
@@ -16425,7 +16388,7 @@ Please note that if you subscribe to funding rate channel without specifying the
 <h3 id='auction-finished'>Auction Finished</h3>
 <p>When auction finishes, markets enter into operational mode and trading continues as usual. </p>
 
-<p>You can read more about the single price auction <a href="https://global.delta.exchange/blog/bootstrapping-liquidity-using-auctions/">here</a></p>
+<p>You can read more about the single price auction <a href="https://www.faida.trade/">here</a></p>
 <h2 id='system_status'>system_status</h2>
 <p><strong>Note:</strong> This channel is now available on the new <a href="#websocket-feed">public channel websocket endpoint</a>. It will be deprecated from the <a href="#websocket-feed">private channel websocket endpoint</a> on 31st July 2026.</p>
 
@@ -16844,7 +16807,7 @@ Please note that if you subscribe to v2/user_trades channel without specifying t
 </span></code></pre><h2 id='portfoliomargins'>PortfolioMargins</h2>
 <p>Channel provides updates for portfolio margin values of the selected sub-account. These updates are sent every 2 seconds. In case portfolio margin is not enabled on the selected sub-account, no updates will be sent on this channel.</p>
 
-<p>For detailed description of portfolio margin please see <a href="https://guides.delta.exchange/delta-exchange-user-guide/trading-guide/margin-explainer/portfolio-margin">user guide</a></p>
+<p>For detailed description of portfolio margin please see <a href="https://guides.faida.trade/trading-guide/margin-explainer/portfolio-margin">user guide</a></p>
 
 <p>UCF: is unrealised cashflows of your portfolio. These are the cashflows (negative for outgoing and positive for incoming) that will take place if all the positions in your portfolio are closed at prevailing mark prices.</p>
 
@@ -16935,7 +16898,7 @@ Please note that if you subscribe to v2/user_trades channel without specifying t
 
 <h2 id='mmp-trigger'>MMP Trigger</h2>
 
-<p>Channel provides updates when MMP is triggered. Market maker protection is available to registered market makers by default. Others can reach out to support for getting access to MMP. More info <a href="https://guides.delta.exchange/delta-exchange-user-guide/market-makers-guide/market-maker-protection">here</a>.  </p>
+<p>Channel provides updates when MMP is triggered. Market maker protection is available to registered market makers by default. Others can reach out to support for getting access to MMP. More info <a href="https://guides.faida.trade/market-makers-guide/market-maker-protection">here</a>.</p>
 
 <blockquote>
 <p>MMP Trigger Sample</p>
@@ -16960,141 +16923,6 @@ Please note that if you subscribe to v2/user_trades channel without specifying t
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<h1 id='changelog'>Changelog</h1><h2 id='17-04-26'>17.04.26</h2>
-<ol>
-<li>The following WebSocket channels have been migrated to the <strong>new public WebSocket endpoint</strong> (<code>wss://public-socket.india.delta.exchange</code>). The new channels provide the same data with a more compact response format. The old channels on the <strong>legacy private endpoint</strong> (<code>wss://socket.delta.exchange</code>) will continue to work but are planned to be deprecated and removed on <strong>31st July 2026</strong> — please update your integrations before that date.</li>
-</ol>
-
-<p>The new channels are: <a href="#mark_price"><code>mark_price</code></a>, <a href="#candlesticks"><code>candlesticks</code></a>, <a href="#spot_price"><code>spot_price</code></a>, <a href="#funding_rate"><code>funding_rate</code></a>, <a href="#system_status"><code>system_status</code></a>.</p>
-
-<ol>
-<li>The following legacy WebSocket channels have been migrated to the <strong>new public WebSocket endpoint</strong> (<code>wss://public-socket.india.delta.exchange</code>). The old channels on the <strong>legacy private endpoint</strong> (<code>wss://socket.delta.exchange</code>) will continue to work but are planned to be deprecated and removed on <strong>31st July 2026</strong> — please update your integrations before that date.</li>
-</ol>
-
-<table><thead>
-<tr>
-<th>Removed Channel</th>
-<th>New Channel</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>l1_orderbook</code></td>
-<td><a href="#ob_l1"><code>ob_l1</code></a></td>
-</tr>
-<tr>
-<td><code>l2_orderbook</code></td>
-<td><a href="#ob_l2"><code>ob_l2</code></a></td>
-</tr>
-<tr>
-<td><code>l2_updates</code></td>
-<td><a href="#ob_updates"><code>ob_updates</code></a></td>
-</tr>
-<tr>
-<td><code>v2/ticker</code></td>
-<td><a href="#ticker"><code>ticker</code></a></td>
-</tr>
-<tr>
-<td><code>all_trades</code></td>
-<td><a href="#trades"><code>trades</code></a></td>
-</tr>
-<tr>
-<td><code>v2/spot_price</code></td>
-<td><a href="#spot_price"><code>spot_price</code></a></td>
-</tr>
-</tbody></table>
-<h2 id='21-03-25'>21.03.25</h2>
-<ol>
-<li>Better documentation for Websocket public channel &#39;candlesticks&#39;, now clearly states even Mark Price candles can be fetched.</li>
-<li>/positions REST API fixed documentation for query parameters.</li>
-<li>Better documentation for Websocket public channel &#39;announcements&#39;.</li>
-</ol>
-<h2 id='20-02-25'>20.02.25</h2>
-<ol>
-<li>Removed Websocket RPC section. Use REST API endpoints with normal HTTP requests (RPC requests still work, it is recommended not to use them).</li>
-<li>Fixed documentation: &quot;User-Agent&quot; header is necessary for authenticated HTTP requests.</li>
-<li>Fixed documentation: Better examples and documentation under &#39;General Information&#39;, &#39;Authentication&#39;, etc tabs.</li>
-<li>Created separate documentation site for Indian and Global site for easier understanding and better examples for both.</li>
-</ol>
-<h2 id='18-10-2024'>18.10.2024</h2>
-<ol>
-<li>Added clickable links to the corresponding API response json schemas under some API &quot;Responses&quot; table. Updated some schemas to match the response. (This is a documentation fix, no changes in API)</li>
-<li>Added &quot;Testnet&quot; REST and Websocket host endpoints.</li>
-<li>Changed &quot;Rate Limits&quot; description and added an example.</li>
-</ol>
-<h2 id='01-05-2024'>01.05.2024</h2>
-<ol>
-<li>Added &quot;po&quot; positions key in /v2/user_trades websocket private channel.</li>
-<li>Removed &quot;fok&quot; type for orders, as they are no longer supported.</li>
-</ol>
-<h2 id='v2-rest-api'>V2 Rest Api</h2>
-<p>Our v2 Api is significantly faster than the v1 api. Our focus while rebuilding v2 Apis was on the following</p>
-
-<ol>
-<li>Remove Api gateway overheads as much as possible.</li>
-<li>Remove overheads due to deep nesting in response payload.</li>
-<li>Better Api structure to query only required data.</li>
-</ol>
-
-<blockquote>
-<p>New Response Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">format</span><span class="w"> </span><span class="err">supports</span><span class="w"> </span><span class="err">sending</span><span class="w"> </span><span class="err">meta</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">alongside</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">body.</span><span class="w"> 
-</span><span class="err">//</span><span class="w"> </span><span class="err">Success</span><span class="w"> </span><span class="err">format</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"...."</span><span class="p">,</span><span class="w">         </span><span class="err">//</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">body</span><span class="w">
-  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"after"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">       </span><span class="err">//</span><span class="w"> </span><span class="err">cursor</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">pagination</span><span class="p">,</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">returned</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">meta</span><span class="w">
-    </span><span class="s2">"before"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="err">//</span><span class="w"> </span><span class="err">Error</span><span class="w"> </span><span class="err">Format</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"insufficient_margin"</span><span class="p">,</span><span class="w">             </span><span class="err">//</span><span class="w"> </span><span class="err">error</span><span class="w"> </span><span class="err">code</span><span class="w">
-    </span><span class="s2">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                              </span><span class="err">//</span><span class="w"> </span><span class="err">error</span><span class="w"> </span><span class="err">context</span><span class="w">
-      </span><span class="s2">"additional_margin_required"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.121"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='key-api-changes'>Key Api changes</h3>
-<ul>
-<li>We have completely removed nested product/asset payloads from live orders and live positions. This ensures the payload is light.</li>
-<li>Rate limiting now works on a fixed window instead of a rolling window.</li>
-<li>Ticker Api - now includes turnover in USD, mark price, spot price.</li>
-<li>Orderbook and trades are now returned in separate Apis.</li>
-<li>For supporting trading strategies which require latest positions, Now we have two different Apis to query position. </li>
-</ul>
-
-<p>/v2/positions - returns only size and entry price. This should be used when you want to get the latest position, but dont need the margin dependent fields like liquidation price, bankruptcy price etc</p>
-
-<p>/v2/positions/margined - returns all fields including margin dependent fields. When the position is updated due to a fill, changes might take some time to reflect in this Api.</p>
-
-<ul>
-<li>All Apis that support pagination now use cursor based pagination, instead of fixed page size pagination. Check more details in our <a href="https://github.com/delta-exchange/python-rest-client">python rest client docs</a></li>
-</ul>
-<h2 id='new-socket-channels'>New Socket Channels</h2>
-<ul>
-<li>Socket Api interface hasn&#39;t changed much in terms of connection management and authentication. </li>
-<li>We have deprecated old channels and created new channels which make integration easier. </li>
-<li>To support easy management of live data, all private data channels now support initial snapshots and sequence numbers.</li>
-</ul>
-<h3 id='list-of-new-public-channels'>List of new public channels</h3>
-<ul>
-<li>v2/ticker - now includes turnover in USD, mark price, spot price</li>
-<li>candlesticks - subscribe to ohlc candle updates for different resolutions</li>
-<li>all_trades - subscribe to all public trades for a symbol</li>
-</ul>
-<h3 id='list-of-new-private-channels'>List of new private channels</h3>
-<ul>
-<li>orders - subscribe to lifecycle of live orders</li>
-<li>user_trades - subscribe to live user trades/fills feed</li>
-<li>positions - subscribe to position updates</li>
-<li>margins - get margin/wallet updates</li>
-</ul>
-
 <h1 id='security'>Security</h1>
 
 <p>We take the security, integrity, availability of our services, and the privacy of our users seriously. We appreciate all security concerns brought forth and are constantly striving to keep on top of the latest threats. Being proactive rather than reactive to emerging security issues is a fundamental belief at Faida Trade. Every day new security issues and attack vectors are created. Faida Trade strives to keep abreast of the latest state-of-the-art security developments by working with independent security researchers. We appreciate the community&#39;s efforts in creating a more secure world.</p>
@@ -17102,7 +16930,7 @@ Please note that if you subscribe to v2/user_trades channel without specifying t
 <h2 id='targets-in-scope'>Targets In scope</h2>
 
 <ul>
-<li>https://*.delta.exchange</li>
+<li>https://*.faida.trade</li>
 </ul>
 
 <p>Any domain/property of Faida Trade Network not listed in the targets section is out of scope. This includes any/all subdomains not listed above.</p>
@@ -17171,7 +16999,7 @@ There are some things we explicitly ask you not to do</p>
 
 <h2 id='rules-of-reporting'>Rules of reporting</h2>
 
-<p>We take our Internal process and workflow seriously, We have a dedicated security team working and testing round the clock, so we would like you to send your reports to only security@delta.exchange and follow below said rules or not following will void you from our bug bounty benefits, Also we would like you to encrypt emails sent to us with a PGP key provided below if the Vulnerability is Severe or Critical.</p>
+<p>We take our Internal process and workflow seriously, We have a dedicated security team working and testing round the clock, so we would like you to send your reports to only security@faida.trade and follow below said rules or not following will void you from our bug bounty benefits, Also we would like you to encrypt emails sent to us with a PGP key provided below if the Vulnerability is Severe or Critical.</p>
 
 <ul>
 <li>We recommend you to use emails which contain test as a keyword in the email address for example <em>test</em>@gmail.com.</li>
@@ -17182,7 +17010,7 @@ There are some things we explicitly ask you not to do</p>
 <li>Do not send us external-links/executable/scripts in report if possible attach a text file or pdf. Without zipp&#39;ing or rar&#39;ing it.</li>
 <li>Screenshots are accepted if only in PNG and JIF formats for internal security reasons.</li>
 <li>POC Videos are accepted if only in MP4,AVI, WEBM, MOV formats for internal security reasons.</li>
-<li>Any or All reports must only reach security@delta.exchange.</li>
+<li>Any or All reports must only reach security@faida.trade.</li>
 </ul>
 
 <h2 id='recommended-reporting-format'>Recommended Reporting format</h2>
@@ -17197,7 +17025,7 @@ There are some things we explicitly ask you not to do</p>
 
 <p>Select the vulnerable target Domain name / Subdomain name</p>
 
-<p>(eg. &quot;so and so on https://example.delta.exchange&quot;)</p>
+<p>(eg. &quot;so and so on https://example.faida.trade&quot;)</p>
 
 <p><b>Vulnerability details</b></p>
 
