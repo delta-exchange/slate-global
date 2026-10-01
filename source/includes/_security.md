@@ -133,4 +133,4 @@ These issues Will be closed as out of scope hence not rewardable.
   
 Not following any one of the above rule will disqualify you from our bug bounty program.
 
-If any doubts related to your submissions or creative dialogue please feel free to email saurabh.goyal@delta.exchange or venkatesh.sharma@delta.exchange.
+If any doubts related to your submissions or creative dialogue please feel free to email saurabh.goyal@faida.trade.
