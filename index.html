@@ -5787,6 +5787,8 @@ curl -X POST https://api.faida.trade/v2/positions/close_all <span class="se">\</
 
 <p><code>POST /positions/close_all</code></p>
 
+<p>Cancels open orders and closes open positions across products for the user. If one or more of the requested products are currently halted (cancel-only mode) or in auction (post-only mode), those products are skipped — their orders/positions are left untouched — while every other, operational product is still closed/cancelled normally. The skipped products, and the reason they were skipped, are listed in <code>result.skipped_products</code>.</p>
+
 <blockquote>
 <p>Body parameter</p>
 </blockquote>
@@ -5846,7 +5848,16 @@ curl -X POST https://api.faida.trade/v2/positions/close_all <span class="se">\</
 </blockquote>
 
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"skipped_products"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"market_disrupted_cancel_only_mode"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -5863,14 +5874,38 @@ curl -X POST https://api.faida.trade/v2/positions/close_all <span class="se">\</
 <tr>
 <td>200</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
-<td>returns back success response</td>
-<td><a href="#schemaapisuccessresponse">ApiSuccessResponse</a></td>
+<td>Returns back success response; lists any skipped, disrupted products</td>
+<td>Inline</td>
 </tr>
 <tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
 <td>Returns error if not able to close all positions</td>
 <td><a href="#schemaapierrorresponse">ApiErrorResponse</a></td>
+</tr>
+</tbody></table>
+
+<h3 id="close-all-positions--responseschema">Response Schema</h3>
+
+<h4 id='enumerated-values-16'>Enumerated Values</h4>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>reason</td>
+<td>market_disrupted_cancel_only_mode</td>
+</tr>
+<tr>
+<td>reason</td>
+<td>market_disrupted_post_only_mode</td>
+</tr>
+<tr>
+<td>reason</td>
+<td>market_disrupted</td>
 </tr>
 </tbody></table>
 
@@ -6000,7 +6035,7 @@ curl -X GET https://api.faida.trade/v2/orders/history <span class="se">\</span>
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-16'>Enumerated Values</h4>
+<h4 id='enumerated-values-17'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -6086,7 +6121,7 @@ curl -X GET https://api.faida.trade/v2/orders/history <span class="se">\</span>
 
 <h3 id="get-order-history-(cancelled-and-closed)-responseschema">Response Schema</h3>
 
-<h4 id='enumerated-values-17'>Enumerated Values</h4>
+<h4 id='enumerated-values-18'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -6322,7 +6357,7 @@ curl -X GET https://api.faida.trade/v2/fills <span class="se">\</span>
 
 <h3 id="get-user-fills-by-filters-responseschema">Response Schema</h3>
 
-<h4 id='enumerated-values-18'>Enumerated Values</h4>
+<h4 id='enumerated-values-19'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -6710,7 +6745,7 @@ curl -X GET https://api.faida.trade/v2/trades/<span class="o">{</span>symbol<spa
 
 <h3 id="get-public-trades-responseschema">Response Schema</h3>
 
-<h4 id='enumerated-values-19'>Enumerated Values</h4>
+<h4 id='enumerated-values-20'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -7007,7 +7042,7 @@ curl -X GET https://api.faida.trade/v2/wallet/transactions <span class="se">\</s
 
 <h3 id="get-wallet-transactions-responseschema">Response Schema</h3>
 
-<h4 id='enumerated-values-20'>Enumerated Values</h4>
+<h4 id='enumerated-values-21'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -8049,7 +8084,7 @@ curl -X POST https://api.faida.trade/v2/orders/cancel_after <span class="se">\</
 
 <h3 id="cancel-after-responseschema">Response Schema</h3>
 
-<h4 id='enumerated-values-21'>Enumerated Values</h4>
+<h4 id='enumerated-values-22'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -8869,7 +8904,7 @@ curl -X GET https://api.faida.trade/v2/products/?states<span class="o">=</span>e
 
 <h3 id="get-product-settlement-prices-responseschema">Response Schema</h3>
 
-<h4 id='enumerated-values-22'>Enumerated Values</h4>
+<h4 id='enumerated-values-23'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -9032,7 +9067,7 @@ curl -X GET https://api.faida.trade/v2/history/candles?resolution<span class="o"
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-23'>Enumerated Values</h4>
+<h4 id='enumerated-values-24'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -9418,7 +9453,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-24'>Enumerated Values</h4>
+<h4 id='enumerated-values-25'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -9609,7 +9644,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-25'>Enumerated Values</h4>
+<h4 id='enumerated-values-26'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -10002,7 +10037,7 @@ This operation does not require authentication.
 <td>Details of an index used in trading, including its constituents and characteristics.</td>
 </tr>
 </tbody></table>
-<h4 id='enumerated-values-26'>Enumerated Values</h4>
+<h4 id='enumerated-values-27'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -10378,7 +10413,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-27'>Enumerated Values</h4>
+<h4 id='enumerated-values-28'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -10676,7 +10711,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-28'>Enumerated Values</h4>
+<h4 id='enumerated-values-29'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -10878,7 +10913,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-29'>Enumerated Values</h4>
+<h4 id='enumerated-values-30'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -11190,7 +11225,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-30'>Enumerated Values</h4>
+<h4 id='enumerated-values-31'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -11304,7 +11339,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-31'>Enumerated Values</h4>
+<h4 id='enumerated-values-32'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -11558,7 +11593,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-32'>Enumerated Values</h4>
+<h4 id='enumerated-values-33'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -11692,7 +11727,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-33'>Enumerated Values</h4>
+<h4 id='enumerated-values-34'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -11866,7 +11901,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-34'>Enumerated Values</h4>
+<h4 id='enumerated-values-35'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -12296,7 +12331,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-35'>Enumerated Values</h4>
+<h4 id='enumerated-values-36'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -12750,7 +12785,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-36'>Enumerated Values</h4>
+<h4 id='enumerated-values-37'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -13264,7 +13299,7 @@ This operation does not require authentication.
 <td>none</td>
 </tr>
 </tbody></table>
-<h4 id='enumerated-values-37'>Enumerated Values</h4>
+<h4 id='enumerated-values-38'>Enumerated Values</h4>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -14428,7 +14463,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-38'>Enumerated Values</h4>
+<h4 id='enumerated-values-39'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -14498,7 +14533,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-39'>Enumerated Values</h4>
+<h4 id='enumerated-values-40'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -14568,7 +14603,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-40'>Enumerated Values</h4>
+<h4 id='enumerated-values-41'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
@@ -15065,7 +15100,7 @@ This operation does not require authentication.
 </tr>
 </tbody></table>
 
-<h4 id='enumerated-values-41'>Enumerated Values</h4>
+<h4 id='enumerated-values-42'>Enumerated Values</h4>
 
 <table><thead>
 <tr>
