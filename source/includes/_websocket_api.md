@@ -1,4 +1,4 @@
- # Websocket Feed
+# Websocket Feed
 ​
 Websocket api can be used for the following use cases
 ​
