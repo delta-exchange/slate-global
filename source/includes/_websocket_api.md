@@ -194,8 +194,10 @@ Refer to the right side for a sample code.
 
 <br><br><br>
 
-**Authentication Responses**  
-All authentication responses will be json containing following keys:  
+### Authentication Responses
+
+All authentication responses will be json containing following keys:
+  
 **"type"** will always be "key-auth"  
 **"success"** is a boolean indicating whether the authentication was a success or failure.  
 **"status_code"** is number just like HTTP response status.  
