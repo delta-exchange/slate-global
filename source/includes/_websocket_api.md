@@ -298,5 +298,3 @@ The python script(right panel) connects to the Faida Trade WebSocket to receive 
 - If an error occurs, it prints an error message.
 - If the connection closes, it notifies the user.
 - The connection remains open indefinitel...
-Show less
- This snippet was truncated for display; see it in full
